@@ -4,6 +4,8 @@ img{width: 100%;}
 
 /* 컨텐츠 사이즈 - padding */
 .mainContentSize{padding-inline: max(calc((100% - 1400px) / 2), var(--spacing)); box-sizing: border-box;}
+.contentsSize, .contentsBox{max-width: 1200px; width: calc(100% - (var(--spacing) * 2)); margin-inline: auto;}
+.contentsSize-padding{padding-inline: max(calc((100% - 1200px) / 2), var(--spacing)); box-sizing: border-box;}
 
 
 /* 포인트 색상 */
@@ -27,8 +29,13 @@ aside a:not(:last-child){margin-bottom: 20px;}
 aside a strong{font-weight: 700;}
 
 
+/* 버튼 */
+.btn-bg{width: 264px; line-height: 70px; font-size: 20px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point01);}
+
+
 /* 서버 페이지 공통 */
-[class*="Page"] > .contentsBox{max-width: 1200px; width: calc(100% - (var(--spacing) * 2)); text-align: center; margin-inline: auto;}
+[class*="Page"]:not(.mainPage){padding-top: var(--headerHeight);}
+[class*="Page"] > .contentsBox{text-align: center;}
 [class*="Page"] > .contentsBox h2{font-size: 40px; font-weight: 700; color: var(--color-point01);}
 [class*="Page"] > footer{margin-top: 200px;}
 .topBox p:first-of-type{font-size: 50px; line-height: 66px; font-weight: 200;}
@@ -36,6 +43,9 @@ aside a strong{font-weight: 700;}
 /* 회사소게, 사업안내 공통 */
 :is(.aboutAsPage, .businessPage) section h2 + p{font-size: 24px; line-height: 34px; margin-top: 30px; font-weight: 200;}
 :is(.aboutAsPage, .businessPage) section h2 + p b{font-weight: 500;}
+/* 사업안내, 연계고용 공통 */
+:is(.businessPage, .employPage) .topBox{padding-block: 40px; display: flex; align-items: center; background-color: #F8FAFF;}
+:is(.businessPage, .employPage) .topBox::before{content: ''; width: 340px; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
 /* 회사소게 공통 */
 .aboutAsPage section:not(:last-of-type){margin-bottom: 200px;}
 
@@ -45,7 +55,10 @@ header{position: fixed; left: 0; top: 0; width: 100%; display: flex; justify-con
 header h1{width: 94px;}
 header h1 a{aspect-ratio: 94 / 60; display: block; background-image: url(../images/logo.png);}
 header nav ul{display: flex; gap: 80px;}
-header nav ul li a{font-size: 20px; line-height: 100px; font-weight: 700;}
+header nav ul li a{font-size: 20px; line-height: var(--headerHeight); font-weight: 700;}
+header nav ul li:last-child a{display: flex; align-items: center;}
+header nav ul li:last-child a::before{content: ''; width: 30px; aspect-ratio: 30 / 24; background: url(../images/icon-inquiry.png) no-repeat center / cover; margin-right: 5px;}
+header nav ul li.active a{text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 10px;}
 header .iconBox{display: none;}
 
 

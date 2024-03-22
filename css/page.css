@@ -21,7 +21,7 @@
 
 
 /* 회사소개 */
-.aboutAsPage .contentsBox{padding-top: 220px;}
+.aboutAsPage .contentsBox{padding-top: 120px;}
 .aboutAsPage .contentsBox .topBox{margin-bottom: 180px; text-align: center;}
 .aboutAsPage .contentsBox .topBox::after{content: ''; width: 380px; margin-top: 50px; aspect-ratio: 380 / 340; background: url(../images/icon-aboutUs.png) no-repeat center / cover; display: inline-block; }
 .aboutAsPage .contentsBox .topBox p:first-of-type{margin-bottom: 60px;}
@@ -64,3 +64,21 @@
 .aboutAsPage .contentsBox .contactArea ul li b{font-size: 16px; font-weight: 700;}
 .aboutAsPage .contentsBox .contactArea ul li p{font-size: 18px; font-weight: 300;}
 .aboutAsPage .contentsBox .contactArea iframe{width: 100%; aspect-ratio: 1200 / 600;}
+
+
+/* 산업안내 */
+.businessPage .topBox{margin-bottom: 120px;}
+.businessPage .topBox::before{margin-inline: 120px 90px; background-image: url(../images/icon-business.png);}
+.businessPage .contentsBox .processArea ol{margin-block: 80px 140px; display: flex; justify-content: space-between;}
+.businessPage .contentsBox .processArea ol li{width: 16.667%;}
+.businessPage .contentsBox .processArea ol li b{font-size: 18px; margin-bottom: 15px; font-weight: 600; display: block;}
+.businessPage .contentsBox .processArea ol li b::before{content: ''; margin-bottom: 20px; display: block; aspect-ratio: 1; background-color: #F8F8F8; border-radius: 100%; background: url(../images/business-process.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover;}
+.businessPage .contentsBox .processArea ol li p{font-size: 16px; line-height: 20px; min-height: 40px; font-weight: 300; color: var(--color-font02); display: flex; justify-content: center; align-items: center;}
+.businessPage .contentsBox .partnersArea ul{margin-block: 80px 140px; display: flex; flex-wrap: wrap; justify-content: space-between;}
+.businessPage .contentsBox .partnersArea ul li{width: 31.667%; font-size: 18px; line-height: 28px;}
+.businessPage .contentsBox .partnersArea ul li::before{content: ''; margin-bottom: 20px; display: block; aspect-ratio: 380 / 214; background: url(../images/business-partners.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover;}
+.businessPage .contentsBox .partnersArea ul li strong{font-weight: 700;}
+.businessPage .contentsBox .partnersArea ul li > strong{display: block;}
+.businessPage .contentsBox .partnersArea ul li p{font-weight: 300;}
+.businessPage .contentsBox .partnersArea ul li:nth-child(n + 4){margin-top: 5%;}
+.businessPage .contentsBox .partnersArea > a{}
