@@ -82,6 +82,43 @@
 .businessPage .contentsBox .partnersArea ul li:nth-child(n + 4){margin-top: 5%;}
 
 
+/* 산업안내 */
+[class*="employ"][class*="Page"] .topBox{margin-bottom: 60px;}
+[class*="employ"][class*="Page"] .topBox::before{margin-right: 60px; background-image: url(../images/icon-employ.png);}
+[class*="employ"][class*="Page"] .tabArea{max-width: 906px; margin-bottom: 120px; margin-inline: auto; display: flex; background-color: #DDE7FE; border-radius: 100px;}
+[class*="employ"][class*="Page"] .tabArea li{flex: 1;}
+[class*="employ"][class*="Page"] .tabArea li a{font-size: 20px; line-height: 60px; font-weight: 600; display: block; text-align: center; color: var(--color-point01);}
+[class*="employ"][class*="Page"] .tabArea li.active a{background-color: var(--color-point01); color: white; border-radius: 100px;}
+
+/* 산업안내 - 감면제도란? */
+.employPolicyPage .contentsBox section > small{font-size: 17px; margin-top: 20px; display: block; font-weight: 300; color: var(--color-font03);}
+.employPolicyPage .contentsBox section section{margin-top: 120px;}
+.employPolicyPage .contentsBox section section h3{font-size: 28px; margin-bottom: 20px; font-weight: 700;}
+.employPolicyPage .contentsBox section section h3 + p{margin-bottom: 40px;}
+.employPolicyPage .contentsBox section section div{background-color: var(--color-face02);}
+.employPolicyPage .contentsBox section section div ul{display: flex; justify-content: center;}
+.employPolicyPage .contentsBox section section div ul li{border: 7px solid #DDE7FE; font-weight: 700; color: var(--color-point01); background-color: white; border-radius: 100%; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.employPolicyPage .contentsBox section .standardArea div{padding-block: 50px;}
+.employPolicyPage .contentsBox section .standardArea div p{color: var(--color-font02);}
+.employPolicyPage .contentsBox section .standardArea div ul{margin-block: 40px;}
+.employPolicyPage .contentsBox section .standardArea div ul li{width: 260px; line-height: 24px;}
+.employPolicyPage .contentsBox section .standardArea div ul li span{margin-bottom: 10px; display: block;}
+.employPolicyPage .contentsBox section .detailArea div{padding-block: 80px; margin-bottom: 40px;}
+.employPolicyPage .contentsBox section .detailArea div ul li{width: 180px; font-size: 18px; line-height: 26px;}
+.employPolicyPage .contentsBox section .detailArea div ul li:first-child{margin-right: 7.8334%; position: relative;}
+.employPolicyPage .contentsBox section .detailArea div ul li:first-child::after{content: ''; width: 34px; aspect-ratio: 34 / 25.334; position: absolute; right: -37px; top: 50%; transform: translateX(100%) translateY(-50%); background: url(../images/icon-equalSign.png) no-repeat center / cover;}
+.employPolicyPage .contentsBox section .detailArea div ul li:not(:first-child, :last-child){margin-right: 6.667%; position: relative;}
+.employPolicyPage .contentsBox section .detailArea div ul li:not(:first-child, :last-child)::after{content: ''; width: 30px; aspect-ratio: 1; position: absolute; right: -30px; top: 50%; transform: translateX(100%) translateY(-50%); background: url(../images/icon-x.png) no-repeat center / cover;}
+.employPolicyPage .contentsBox section .detailArea div dl{padding-left: 120px; font-size: 16px; margin-top: 60px; display: inline-block; position: relative;}
+.employPolicyPage .contentsBox section .detailArea div dl dt{font-weight: 600; position: absolute; left: 0; top: 50%; transform: translateY(-50%); display: flex; align-items: center;}
+.employPolicyPage .contentsBox section .detailArea div dl dt::after{content: ''; width: 15px; margin-left: 15px; aspect-ratio: 34 / 25.334; background: url(../images/icon-equalSign.png) no-repeat center / cover;}
+.employPolicyPage .contentsBox section .detailArea div dl dd{padding-inline: 10px; font-weight: 300;}
+.employPolicyPage .contentsBox section .detailArea div dl dd:not(:last-of-type){border-bottom: 3px solid #B7CDFF; padding-bottom: 10px; margin-bottom: 10px;}
+.employPolicyPage .contentsBox section .detailArea p:not(:first-child){color: var(--color-font02);}
+.employPolicyPage .contentsBox section .detailArea p:not(:first-child):not(:last-of-type){margin-bottom: 30px;}
+.employPolicyPage .contentsBox section > a{margin-top: 120px;}
+
+
 /* 소식 */
 .newsPage .contentsBox section h2{margin-bottom: 80px;}
 
@@ -99,4 +136,4 @@
 
 
 /* 문의 */
-.inquiryPage .contentsBox section h2 + p{margin-bottom: 80px;}
+.inquiryPage .contentsBox section h2 + p{margin-bottom: 80px; color: var(--color-font02);}
