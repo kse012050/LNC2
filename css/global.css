@@ -30,22 +30,49 @@ aside a strong{font-weight: 700;}
 
 
 /* 버튼 */
-.btn-bg{width: 264px; line-height: 70px; font-size: 20px; font-weight: 700; color: white; text-align: center; background-color: var(--color-point01);}
+[class*="btn-"]{width: 264px; font-size: 20px; font-weight: 700; text-align: center;}
+.btn-bg{line-height: 70px; color: white; background-color: var(--color-point01);}
+.btn-border{line-height: 68px; color: var(--color-point01); border: 1px solid var(--color-point01); box-sizing: border-box;}
+.btnBox{gap: 30px; margin-top: 100px; display: flex; justify-content: center; align-items: center;}
+.btnBox [class*="btn-"]{width: 230px;}
+
+
+/* 게시판 공통 */
+.boardBox{display: flex;}
+.boardBox li{width: 31.667%;}
+.boardBox li a img{margin-bottom: 20px;}
+.boardBox li a strong{font-size: 20px; margin-bottom: 10px; font-weight: 700; display: block;}
+.boardBox li a time{font-size: 16px; font-weight: 400; color: var(--color-font03);}
+
+
+/* 페이지네이션 */
+.paginationBox{display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 80px;}
+.paginationBox a{width: 30px;}
+.paginationBox > a{aspect-ratio: 1; background: url(../images/icon-pagination.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover;}
+.paginationBox ol{display: flex; align-items: center; gap: 10px; margin-inline: 10px;}
+.paginationBox ol li a{line-height: 30px; font-size: 16px; font-weight: 400; text-align: center;}
+.paginationBox ol li.active a{font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px;}
 
 
 /* 서버 페이지 공통 */
 [class*="Page"]:not(.mainPage){padding-top: var(--headerHeight);}
-[class*="Page"] > .contentsBox{text-align: center;}
-[class*="Page"] > .contentsBox h2{font-size: 40px; font-weight: 700; color: var(--color-point01);}
 [class*="Page"] > footer{margin-top: 200px;}
 .topBox p:first-of-type{font-size: 50px; line-height: 66px; font-weight: 200;}
 .topBox p:first-of-type strong{font-weight: 600;}
+/* 회사소게, 사업안내, 사업안내, 연계고용 공통 */
+:is(.aboutAsPage, .businessPage, .businessPage, .employPage) > .contentsBox{text-align: center;}
+:is(.aboutAsPage, .businessPage, .businessPage, .employPage) > .contentsBox h2{font-size: 40px; font-weight: 700; color: var(--color-point01);}
 /* 회사소게, 사업안내 공통 */
 :is(.aboutAsPage, .businessPage) section h2 + p{font-size: 24px; line-height: 34px; margin-top: 30px; font-weight: 200;}
 :is(.aboutAsPage, .businessPage) section h2 + p b{font-weight: 500;}
 /* 사업안내, 연계고용 공통 */
 :is(.businessPage, .employPage) .topBox{padding-block: 40px; display: flex; align-items: center; background-color: #F8FAFF;}
 :is(.businessPage, .employPage) .topBox::before{content: ''; width: 340px; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
+/* 회사소개, 상세 공통 */
+:is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
+/* 소식, 문의 공통 */
+:is(.newsPage, .employPage) .contentsBox{padding-top: 100px;}
+:is(.newsPage, .employPage) .contentsBox section h2{font-size: 50px; font-weight: 700;}
 /* 회사소게 공통 */
 .aboutAsPage section:not(:last-of-type){margin-bottom: 200px;}
 

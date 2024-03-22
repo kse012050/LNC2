@@ -21,7 +21,6 @@
 
 
 /* 회사소개 */
-.aboutAsPage .contentsBox{padding-top: 120px;}
 .aboutAsPage .contentsBox .topBox{margin-bottom: 180px; text-align: center;}
 .aboutAsPage .contentsBox .topBox::after{content: ''; width: 380px; margin-top: 50px; aspect-ratio: 380 / 340; background: url(../images/icon-aboutUs.png) no-repeat center / cover; display: inline-block; }
 .aboutAsPage .contentsBox .topBox p:first-of-type{margin-bottom: 60px;}
@@ -81,4 +80,19 @@
 .businessPage .contentsBox .partnersArea ul li > strong{display: block;}
 .businessPage .contentsBox .partnersArea ul li p{font-weight: 300;}
 .businessPage .contentsBox .partnersArea ul li:nth-child(n + 4){margin-top: 5%;}
-.businessPage .contentsBox .partnersArea > a{}
+
+
+/* 소식 */
+.newsPage .contentsBox section h2{margin-bottom: 80px;}
+
+
+/* 상세 */
+.detailPage .contentsBox > section h2{font-size: 32px; font-weight: 700;}
+.detailPage .contentsBox > section time{font-size: 16px; font-weight: 400; color: var(--color-font03); display: block;}
+.detailPage .contentsBox > section > time{margin-top: 20px;}
+.detailPage .contentsBox > section .contentArea{padding-block: 60px 100px; margin-top: 60px; border-width: 1px 0; border-style: solid; border-color: black transparent var(--color-line01);}
+.detailPage .contentsBox > section .contentArea img{margin-bottom: 40px;}
+.detailPage .contentsBox > section .contentArea p{font-size: 18px; line-height: 26px; font-weight: 300;}
+.detailPage .contentsBox > section .contentArea p:not(:last-of-type){margin-bottom: 26px;}
+.detailPage .contentsBox > section section{margin-top: 160px;}
+.detailPage .contentsBox > section section h3{font-size: 28px; margin-bottom: 40px; font-weight: 700;}
