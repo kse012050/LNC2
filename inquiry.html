@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0">
     <!-- Iphone 모바일 확대 방지  maximum-scale=1.0, user-scalable=0-->
-    <title>LNC (주)엘앤씨 에프앤비</title> 
+    <title>납품하기 - LNC (주)엘앤씨 에프앤비</title> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/style.js"></script>
     <link rel="stylesheet" href="css/import.css">
 </head>
 <body>
-    <div class="aboutAsPage">
+    <div class="inquiryPage">
         <header class="mainContentSize">
             <h1><a href="index.html" class="imgBox">LNC (주)엘앤씨 에프앤비</a></h1>
             <button class="iconBox">메뉴 열기</button>
@@ -43,7 +43,61 @@
         </aside>
 
         <div class="contentsBox">
-            
+            <section>
+                <h2>납품문의</h2>
+                <p>빠른 시일안에 담당자가 확인하여, 메일 or 연락처로 회신드리겠습니다.</p>
+                <form>
+                    <fieldset class="inputBox">
+                        <ul>
+                            <li>
+                                <label for="">업체명</label>
+                                <div>
+                                    <input type="text" required placeholder="업체명을 입력해주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">담당자 성함</label>
+                                <div>
+                                    <input type="text" required placeholder="담당자 성함/직책을 입력해주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">연락처</label>
+                                <div>
+                                    <input type="text" required placeholder="담당자 연락처를 입력해주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">메일 주소</label>
+                                <div>
+                                    <input type="text" required placeholder="회신드릴 메일 주소를 입력해주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="">예상연간납품액</label>
+                                <div>
+                                    <input type="text" placeholder="예상연간납품액을 입력해주세요.">
+                                </div>
+                            </li>
+                            <li class="full">
+                                <label for="">제목</label>
+                                <div>
+                                    <input type="text" required placeholder="제목을 입력해주세요.">
+                                </div>
+                            </li>
+                            <li class="full">
+                                <label for="">상세 내용</label>
+                                <div>
+                                    <textarea placeholder="문의사항을 작성해주세요." required></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                        <input type="checkbox" id="agree">
+                        <label for="agree"><b>(필수)</b> 개인정보수집 및 이용안내에 동의합니다.</label>
+                    </fieldset>
+                    <input type="submit" value="문의하기" class="btn-bg">
+                </form>
+            </section>
         </div>
 
         
