@@ -66,11 +66,14 @@ aside a strong{font-weight: 700;}
 .inputBox ul li div :is(input, textarea)::placeholder{color: var(--color-font04);}
 .inputBox ul li div input{height: 60px;}
 .inputBox ul li div textarea{height: 300px;}
-.inputBox input[type="checkbox"] + label{font-size: 16px; display: flex; align-items: center;}
-.inputBox input[type="checkbox"] + label::before{content: ''; width: 22px; margin-right: 10px; aspect-ratio: 1; --styleIdx: 0; background: url(../images/icon-checkbox.png) no-repeat center top calc(100% * var(--styleIdx)) / cover;}
-.inputBox input[type="checkbox"] + label b{font-weight: 700;}
-.inputBox input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
+.inputBox input[type="checkbox"] + label::before{margin-right: 10px;}
 .inputBox + input[type="submit"]{margin-top: 100px; display: block; margin-inline: auto;}
+
+/* 체크박스 */
+input[type="checkbox"] + label{font-size: 16px; display: flex; align-items: center;}
+input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; --styleIdx: 0; background: url(../images/icon-checkbox.png) no-repeat center top calc(100% * var(--styleIdx)) / cover;}
+input[type="checkbox"] + label b{font-weight: 700;}
+input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 
 
 /* 서버 페이지 공통 */
@@ -89,7 +92,8 @@ aside a strong{font-weight: 700;}
 :is(.businessPage, [class*="employ"][class*="Page"]) .topBox::before{content: ''; width: 340px; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
 /* 연계고용, 문의하기 공통 */
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
-.employPolicyPage section p{font-size: 18px; line-height: 24px; font-weight: 300;}
+.employPolicyPage section p,
+.employCalculatorPage section section h3 + p{font-size: 18px; line-height: 24px; font-weight: 300;}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p{margin-top: 30px;}
 /* 회사소개, 상세 공통 */
 :is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
