@@ -7,7 +7,7 @@
 .mainPage .fullBox div:not(:last-of-type){border-bottom: 1px solid #D9D9D9; box-sizing: border-box;}
 .mainPage .fullBox div span{font-size: 26px; line-height: 40px; margin-bottom: 102px; font-weight: 300;}
 .mainPage .fullBox div span mark{font-size: 30px; font-weight: 600; display: block;}
-.mainPage .fullBox div h2{font-size: 60px; line-height: 72px; margin-bottom: 30px; font-weight: 700;}
+.mainPage .fullBox div strong{font-size: 60px; line-height: 72px; margin-bottom: 30px; font-weight: 700;}
 .mainPage .fullBox div p{font-size: 18px; line-height: 26px; font-weight: 300; color: var(--color-font02);}
 .mainPage .fullBox div a{font-size: 18px; margin-top: 60px; font-weight: 700; text-decoration: underline;}
 .mainPage .fullBox .newsArea{background-color: var(--color-point01); color: white;}
@@ -18,3 +18,49 @@
 .mainPage .fullBox .newsArea ul li b{font-size: 24px; margin-bottom: 15px; font-weight: 700; display: block;}
 .mainPage .fullBox .newsArea ul li time{font-size: 18px; color: rgba(255, 255, 255, 0.5);}
 .mainPage .fullBox .newsArea > a{font-size: 18px; width: 203px; line-height: 60px; margin-top: 100px; align-self: center; font-weight: 500; text-align: center; color: rgba(255, 255, 255, 0.5); background-color: rgba(255, 255, 255, 0.1);}
+
+
+/* 회사소개 */
+.aboutAsPage .contentsBox{padding-top: 220px;}
+.aboutAsPage .contentsBox .topBox{margin-bottom: 180px; text-align: center;}
+.aboutAsPage .contentsBox .topBox::after{content: ''; width: 380px; margin-top: 50px; aspect-ratio: 380 / 340; background: url(../images/icon-aboutUs.png) no-repeat center / cover; display: inline-block; }
+.aboutAsPage .contentsBox .topBox p:first-of-type{margin-bottom: 60px;}
+.aboutAsPage .contentsBox .topBox img{width: 358px; margin-bottom: 30px;}
+.aboutAsPage .contentsBox .topBox p:nth-of-type(2){font-size: 20px; line-height: 28px; font-weight: 300; color: var(--color-font02);}
+.aboutAsPage .contentsBox .historyArea h2{margin-bottom: 80px;}
+.aboutAsPage .contentsBox .historyArea ol{margin-block: 194px; display: inline-flex; width: 100%; background: linear-gradient(90deg, #DDE7FE 0%, #89B4FD 30%, #78A0ED 65%, #092361 100%);}
+.aboutAsPage .contentsBox .historyArea ol li{position: relative;}
+.aboutAsPage .contentsBox .historyArea ol li::before,
+.aboutAsPage .contentsBox .historyArea ol li::after{content: ''; position: absolute; right: 2px; width: 10px; height: 62%; background-color: white;}
+.aboutAsPage .contentsBox .historyArea ol li::before{top: -3px; transform: translateX(-105%) rotate(-27deg); transform-origin: top;}
+.aboutAsPage .contentsBox .historyArea ol li::after{bottom: -3px; transform: translateX(-105%) rotate(27deg); transform-origin: bottom;}
+.aboutAsPage .contentsBox .historyArea ol li:not(:nth-last-child(-n + 2)){flex: 140;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-last-child(2){flex: 160;}
+.aboutAsPage .contentsBox .historyArea ol li:last-child{flex: 200;}
+.aboutAsPage .contentsBox .historyArea ol li:last-child::before{box-shadow: 9px 0px 0px 0px white;}
+.aboutAsPage .contentsBox .historyArea ol li:last-child::after{box-shadow: 9px 0px 0px 0px white;}
+.aboutAsPage .contentsBox .historyArea ol li span{font-size: 26px; line-height: 80px; font-weight: 700; color: white;}
+.aboutAsPage .contentsBox .historyArea ol li div{height: 184px; margin-left: 8px; padding-block: 10px; padding-left: 15px; border-left: 1px dotted var(--color-font03); position: absolute; left: 0; text-align: left; box-sizing: border-box; /* position: relative; */}
+.aboutAsPage .contentsBox .historyArea ol li div::after{content: ''; position: absolute; left: 0; width: 15px; translate: -50%; aspect-ratio: 15 / 10; background: url(../images/icon-polygon.png) no-repeat center / cover;}
+.aboutAsPage .contentsBox .historyArea ol li:not(:last-child) div{width: 200%;}
+.aboutAsPage .contentsBox .historyArea ol li:last-child div{width: 100%;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n) div{top: -194px;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n) div::after{bottom: 0; rotate: 180deg;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n + 1) div{bottom: -194px; display: flex; flex-direction: column; justify-content: flex-end;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n + 1) div::after{top: 0;}
+.aboutAsPage .contentsBox .historyArea ol li div p{font-size: 16px; line-height: 19px; font-weight: 300;}
+.aboutAsPage .contentsBox .historyArea ol li div p:not(:last-of-type){margin-bottom: 20px;}
+.aboutAsPage .contentsBox .certificationArea p{margin-bottom: 80px;}
+.aboutAsPage .contentsBox .certificationArea ul{display: flex; flex-wrap: wrap; justify-content: space-between; padding: 20px 5% 40px 43.334%; /* row-gap: 40px; */ /* 6.4516 */ position: relative;}
+.aboutAsPage .contentsBox .certificationArea ul li{box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.10);}
+.aboutAsPage .contentsBox .certificationArea ul li:first-child{position: absolute; left: 5%; top: 20px; width: 33.3334%; aspect-ratio: 400 / 563; background: url(../images/abuotUs-certificationImg.png) no-repeat center / cover;}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){width: 29.0322%; aspect-ratio: 180 / 260; background-image: url(../images/abuotUs-certification.png); background-position: left top calc(100% / (var(--idxTotal) - 2) * (var(--styleIdx) - 1));}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 6.4516%;}
+.aboutAsPage .contentsBox .certificationArea > a{display: inline-block; font-size: 18px; font-weight: 700; width: 350px; line-height: 60px; margin-top: 80px; text-align: center; border: 1px solid var(--color-line01);}
+.aboutAsPage .contentsBox .contactArea > p{margin-bottom: 80px;}
+.aboutAsPage .contentsBox .contactArea ul{display: flex; margin-bottom: 80px;}
+.aboutAsPage .contentsBox .contactArea ul li{flex: 1; line-height: 26px; text-align: center;}
+.aboutAsPage .contentsBox .contactArea ul li::before{content: ''; display: block; width: 40px; margin-bottom: 20px; aspect-ratio: 1; background: url(../images/icon-contact.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover; margin-inline: auto;}
+.aboutAsPage .contentsBox .contactArea ul li b{font-size: 16px; font-weight: 700;}
+.aboutAsPage .contentsBox .contactArea ul li p{font-size: 18px; font-weight: 300;}
+.aboutAsPage .contentsBox .contactArea iframe{width: 100%; aspect-ratio: 1200 / 600;}
