@@ -118,6 +118,23 @@
 .employPolicyPage .contentsBox section .detailArea p:not(:first-child):not(:last-of-type){margin-bottom: 30px;}
 .employPolicyPage .contentsBox section > a{margin-top: 120px;}
 
+/* 산업안내 - 감면 절차 */
+.employProcedurePage .contentsBox section > p{margin-bottom: 80px;}
+.employProcedurePage .contentsBox section ol{font-size: 16px; font-weight: 300; text-align: left;}
+.employProcedurePage .contentsBox section ol > li{padding-left: 56px; display: flex; flex-wrap: wrap; column-gap: 20px; counter-increment: employProcedure; position: relative;}
+.employProcedurePage .contentsBox section ol > li::before{font-size: 18px; content: counter(employProcedure); position: absolute; left: 0; top: 0; width: 36px; aspect-ratio: 1; font-weight: 700; color: white; background-color: #89B4FD; border-radius: 100%; display: flex; justify-content: center; align-items: center;}
+.employProcedurePage .contentsBox section ol > li:not(:last-child){line-height: 28px; padding-bottom: 80px;}
+.employProcedurePage .contentsBox section ol > li:last-child{line-height: 24px;}
+.employProcedurePage .contentsBox section ol > li mark{font-weight: 600;}
+.employProcedurePage .contentsBox section ol > li strong{font-size: 28px; line-height: 36px; margin-bottom: 30px; font-weight: 700; width: 100%;}
+.employProcedurePage .contentsBox section ol > li div{padding: 20px 25px; box-sizing: border-box; border-radius: 10px;}
+.employProcedurePage .contentsBox section ol > li div:first-of-type{flex: 664; border: 1px solid #89B4FD;}
+.employProcedurePage .contentsBox section ol > li div:first-of-type p:not(:last-of-type){margin-bottom: 20px;}
+.employProcedurePage .contentsBox section ol > li div:nth-of-type(2){flex: 460; background-color: var(--color-face02);}
+.employProcedurePage .contentsBox section ol > li div:nth-of-type(2) mark{display: block;}
+.employProcedurePage .contentsBox section ol > li div:nth-of-type(2) b{margin-top: 20px; display: block; font-weight: 600;}
+
+
 
 /* 소식 */
 .newsPage .contentsBox section h2{margin-bottom: 80px;}
