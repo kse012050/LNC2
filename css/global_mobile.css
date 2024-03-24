@@ -1,0 +1,29 @@
+/* 언더라인 */
+.underLine{text-decoration-thickness: 10px;}
+
+
+/* 사이드 메뉴 */
+aside{position: fixed; bottom: 0; right: 0; width: 100%; height: 60px; justify-content: center; align-items: center; background-color: #FF6760;}
+aside a{font-size: 14px; line-height: 17px; flex: 1;}
+aside a:not(:last-of-type){border-right: 1px solid rgba(255, 255, 255, 0.3);}
+
+
+/* 해더 */
+header{height: var(--headerHeight);}
+header h1{width: 54px;}
+header nav{display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);}
+header nav ul{width: 260px; height: 100%; padding: 140px 30px; margin-left: auto; background-color: white; box-sizing: border-box; position: relative;}
+header nav ul li a{font-size: 20px; line-height: var(--headerHeight); font-weight: 700;}
+header nav ul li:last-child a{position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%);}
+header nav ul li:last-child a::before{width: 25px;}
+header nav .iconBox{background-image: url(../images/icon-close.png); position: absolute; right: 12px; top: 10px; z-index: 10;}
+header .iconBox{width: 38px; aspect-ratio: 1;}
+header > .iconBox{background-image: url(../images/icon-menu.png);}
+
+
+/* 푸터 */
+footer{padding-block: 50px 106px;}
+footer img{max-width: 168px; margin-bottom: 20px;}
+footer address{font-size: 13px; line-height: 20px; max-width: 290px;}
+footer address dl:nth-child(4)::after{content: '/'; margin-inline: 0.4em;}
+

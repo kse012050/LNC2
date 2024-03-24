@@ -1,0 +1,25 @@
+/* 언더라인 */
+.underLine{text-decoration-thickness: 15px;}
+
+
+/* 사이드 메뉴 */
+aside{position: fixed; top: 0; right: 40px; height: 100%; flex-direction: column;}
+aside a{font-size: 16px; line-height: 22px; width: 140px; padding-block: 40px; aspect-ratio: 1; background-color: #FF6760; border-radius: 100%; border: 5px solid white;}
+aside a::after{content: ''; width: 30px; aspect-ratio: 1; position: absolute; left: 50%; bottom: 15px; transform: translateX(-50%); background: url(../images/icon-go.png) no-repeat center / cover;}
+aside a:not(:last-child){margin-bottom: 20px;}
+
+
+/* 해더 */
+header h1{width: 94px;}
+header nav ul{display: flex; gap: 80px;}
+header nav ul li a{font-size: 20px; line-height: var(--headerHeight);}
+header nav ul li:last-child a::before{width: 30px;}
+header nav ul li.active a{text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 10px;}
+header .iconBox{display: none;}
+
+
+/* 푸터 */
+footer{padding-block: 80px;}
+footer img{max-width: 287px; margin-bottom: 30px;}
+footer address{font-size: 16px; line-height: 26px; max-width: 500px;}
+footer address :is(dl:nth-child(2), dl:nth-child(4))::after{content: '/'; margin-inline: 0.4em;}

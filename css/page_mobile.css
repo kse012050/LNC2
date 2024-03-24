@@ -1,0 +1,13 @@
+/* 메인 */
+.mainPage .fullBox :is(div, section){padding-top: calc(var(--headerHeight) + 30px);}
+.mainPage .fullBox div{background-size: min(100%, 360px); background-position: bottom 60px center;}
+.mainPage .fullBox div span{font-size: 20px; line-height: 26px; margin-bottom: 50px;}
+.mainPage .fullBox div strong{font-size: 32px; line-height: 38px; max-width: 300px; word-break: keep-all;}
+.mainPage .fullBox div p{display: none;}
+.mainPage .fullBox div a{font-size: 14px;}
+.mainPage .fullBox .newsArea{justify-content: center;}
+.mainPage .fullBox .newsArea ul li img{margin-bottom: 20px;}
+.mainPage .fullBox .newsArea ul li b{font-size: 16px; margin-bottom: 5px;}
+.mainPage .fullBox .newsArea ul li time{font-size: 14px;}
+.mainPage .fullBox .newsArea > a{font-size: 14px; width: 164px; line-height: 50px; margin-top: 40px;}
+.mainPage .paginationBox{display: none;}
