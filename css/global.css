@@ -83,10 +83,7 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 .employPolicyPage section p,
 .employCalculatorPage section section h3 + p{font-weight: 300;}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p{margin-top: 30px;}
-/* 회사소개, 상세 공통 */
-:is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
 /* 소식, 문의 공통 */
-:is(.newsPage, .inquiryPage) .contentsBox{padding-top: 100px;}
 :is(.newsPage, .inquiryPage) .contentsBox section h2{font-weight: 700;}
 
 

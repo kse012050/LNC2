@@ -60,7 +60,10 @@ aside a:not(:last-child){margin-bottom: 20px;}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
 .employPolicyPage section p,
 .employCalculatorPage section section h3 + p{font-size: 18px; line-height: 24px;}
+/* 회사소개, 상세 공통 */
+:is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
 /* 소식, 문의 공통 */
+:is(.newsPage, .inquiryPage) .contentsBox{padding-top: 100px;}
 :is(.newsPage, .inquiryPage) .contentsBox section h2{font-size: 50px;}
 /* 회사소게 공통 */
 .aboutAsPage section:not(:last-of-type){margin-bottom: 200px;}

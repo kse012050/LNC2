@@ -1,5 +1,6 @@
 br.pc{display: none;}
 
+
 /* 언더라인 */
 .underLine{text-decoration-thickness: 10px;}
 
@@ -13,8 +14,8 @@ aside a:not(:last-of-type){border-right: 1px solid rgba(255, 255, 255, 0.3);}
 /* 버튼 */
 [class*="btn-"]{width: 320px; font-size: 16px;}
 .btn-bg{line-height: 60px;}
-.btnBox{gap: 10px; margin-top: 60px;}
 .btn-border{line-height: 58px;}
+.btnBox{max-width: 320px; gap: 10px; margin-top: 60px; margin-inline: auto;}
 .btnBox [class*="btn-"], input[type="submit"]{flex: 1;}
 
 
@@ -54,7 +55,10 @@ aside a:not(:last-of-type){border-right: 1px solid rgba(255, 255, 255, 0.3);}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
 .employPolicyPage section p,
 .employCalculatorPage section section h3 + p{font-size: 15px; line-height: 22px;}
+/* 회사소개, 상세 공통 */
+:is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 40px;}
 /* 소식, 문의 공통 */
+:is(.newsPage, .inquiryPage) .contentsBox{padding-top: 40px;}
 :is(.newsPage, .inquiryPage) .contentsBox section h2{font-size: 32px;}
 /* 회사소게 공통 */
 .aboutAsPage section:not(:last-of-type){margin-bottom: 100px;}

@@ -1,89 +1,1413 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        ol{margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; align-items: center; width: 60px; height: 800px; background: url(Union.png) no-repeat center / cover;}
-        ol li{flex: 100;}
-        ol li div{display: none;}
+    <title>오보틀</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="csrf-token" content="MTcxMTM1NDc0OTgyMzM1OTE1NjM2NjQ5MzE4NTM5NTUxODY0MDc2MzAx" />
+
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="오보틀">
+    <meta property="og:url" content="https://ohbottle.co.kr/main/html.php?htmid=service/reduce3.html">
+    <meta property="og:description" content="오보틀">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="오보틀">
+    <meta name="twitter:description" content="오보틀">
+
+
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/reset.css?ts=1663810199">
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/common/common.css?ts=1667797339">
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/common/layer/layer.css?ts=1667797391">
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/layout/layout.css?ts=1696391242">
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/goods/list.css?ts=1663810199">
+	<link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/button.css?ts=1663810199">
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/service/service.css?ts=1693966895" />
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/js/jquery/chosen/chosen.css?ts=1663810199" />
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/custom.css?ts=1671371518" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/landing.css?ts=1695639824"> 
+    <link type="text/css" rel="stylesheet" href="/data/skin/front/moment_C/css/service/reduce.css?ts=1695005283"> 
+    
+    <script type="text/javascript">
+        var json_locale_data = {"domain":"messages","locale_data":{"messages":{"":{"lang":"ATF","plural-forms":"nplurals=1; plural=0"}}}}
+    </script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/gd_gettext.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/jquery.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/underscore/underscore-min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/validation/jquery.validate.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/validation/additional-methods.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/numeral/numeral.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/global/accounting.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/global/money.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/chosen/chosen.jquery.min.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/placeholder/placeholders.jquery.min.js?ts=1663810199"></script>
+    <![if gt IE 8]>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/copyclipboard/clipboard.min.js?ts=1663810199"></script>
+    <![endif]>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/jquery/vticker/jquery.vticker.js?ts=1663810199"></script>
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/gd_ui.js?ts=1664330739"></script>
+
+    <script type="text/javascript">
+        // 고도몰5 통화정책
+        var gdCurrencyDecimal = 0;
+        var gdCurrencyDecimalFormat = '0';
+        var gdCurrencyCode = 'KRW';
+        var gdCurrencyAddDecimal = 0;
+        var gdCurrencyAddDecimalFormat = '';
+        var gdCurrencyAddCode = '';
+        var gdLocale = 'ko';
+        var gdCurrencySymbol = '';
+        var gdCurrencyString = '원';
+
+        // 환율변환 정책
+        fx.base = "KRW";
+        fx.settings = {
+            from : "KRW",
+            to : gdCurrencyCode
+        };
+        fx.rates = {
+            "KRW" : 1,
+            "USD" : 0.001,
+            "CNY" : 0.010,
+            "JPY" : 0.100,
+            "EUR" : 0.001,
+        }
+    </script>
+
+    <script type="text/javascript" src="/data/skin/front/moment_C/js/gd_common.js?ts=1663810199"></script>
+
+    <!-- Add script : start -->
+    <script type="text/javascript" src="/admin/gd_share/script/visit/gd_visit.js?requestUrl=https%3A%2F%2Fcollector-statistics.nhn-commerce.com%2Fhttp.msg&requestData=%7B%22base_time%22%3A%222024-03-25T17%3A19%3A09%2B09%3A00%22%2C%22mall_id%22%3A%22899826%22%2C%22user_id%22%3Anull%2C%22refer%22%3A%22https%3A%5C%2F%5C%2Fohbottle.co.kr%3A443%22%2C%22uri%22%3A%22html.php%22%2C%22domain%22%3A%22ohbottle.co.kr%22%2C%22country%22%3A%22kr%22%2C%22solution%22%3A%22G5%22%7D&dummyData="></script>
+    <!-- Add script : end -->
+
+    
+
+    <style type="text/css">
+        body {
+        }
+
+        /* body > #wrap > #header_warp : 상단 영역 */
+        #header_warp {
+        }
+
+        /* body > #wrap > #container : 메인 영역 */
+        #container {
+        }
+
+        /* body > #wrap > #footer_wrap : 하단 영역 */
+        #footer_wrap {
+        }
     </style>
+
+    
+
+    <script>
+    
+        //특정메뉴 페이지이동
+        $(document).ready(function () {
+            $(".gnb ul li a:contains('회사소개')").attr("href", "http://ohbottle.net").attr("target", "_blank");
+            $(".gnb ul li a:contains('꽃배달')").attr("href", "https://www.obf.co.kr").attr("target", "_blank");
+            $(".gnb_allmenu ul li all_menu_cont a:contains('회사소개')").attr("href", "http://ohbottle.net").attr("target", "_blank");
+            $(".gnb_allmenu ul li all_menu_cont a:contains('꽃배달')").attr("href", "https://www.obf.co.kr").attr("target", "_blank");
+        });    
+    
+    </script>
+
 </head>
-<body>
-    <ol>
-        <li>
-            <span>2014</span>
-            <div>
-                <p>한라유통(고양시) 설립</p>
-                <p>농림부 HACCP 적용작업장</p>
+
+<body class="body-service body-reduce3 pc"  >
+
+        <div class="top">
+            <ul>
+                <li><a href="/main/html.php?htmid=service/reduce1.html">장애인연계고용대상 기업 오보틀은? <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/main/html.php?htmid=service/reduce2.html">연계고용부담감면제도 활용가이드 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+                <li><a href="/main/html.php?htmid=service/reduce3.html">연계고용 부담금 감면 시뮬레이션 <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a></li>
+            </ul>            
+        </div>
+        
+<div class="top_area displaynone"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/banner/b82bf64a133bfa27b36f6160c5c1228e_18587.jpg"  alt="상단배너" title="상단배너"   /></div>
+<div id="wrap">
+
+    <div id="header_warp">
+<div id="header">
+
+    <div class="header_top">
+        <div class="header_top_cont">
+
+            <!-- 멀티상점 선택 -->
+            
+            <!-- 멀티상점 선택 -->
+
+            <ul class="top_member_box">
+                    <li><a href="../member/login.php">LOGIN</a><span class="txt_bar"></span></li>
+                <li><a href="../member/join_method.php">JOIN</a><span class="txt_bar"></span>
+                    <!--<span class="accent">
+                        <span><strong>2,000 P</strong></span>
+                    </span>-->
+                </li>
+                <li>
+                    <div class="top_mypage_cont">
+                        <span class="top_mypage_tit"><a href="../mypage/index.php">MYPAGE</a></span>
+                        <ul style="display:none;">
+                            <li><a href="../mypage/order_list.php">주문조회</a></li>
+                            <li><a href="../mypage/my_page_password.php">내정보수정</a></li>
+                            <li><a href="../mypage/wish_list.php">찜 리스트</a></li>
+                            <li><a href="../mypage/mypage_qa.php">1:1 문의</a></li>
+                        </ul>
+                    </div>
+                    <span class="txt_bar"></span>
+                </li>
+                <li><a href="../order/cart.php">장바구니( <strong>0</strong> )</a><span class="txt_bar"></span></li>
+                <li><a href="../service/index.php">고객센터</a><span class="txt_bar"></span></li>
+                <li><a href="http://ohbottle.biz/" target="_blank">ENGLISH</a></li>
+            </ul>
+        </div>
+        <!-- //header_top_cont -->
+    </div>
+    <!-- //header_top -->
+    
+    <div class="header_search">
+        <div class="header_search_cont">
+			<div class="top_mark"></div>
+            <div class="h1_logo"><a href="../main/index.php" ><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/banner/d08e0628e7d10c58e397bc67eadf7414_82256.png"  alt="상단 로고" title="상단 로고"   /></a></div>
+
+            <!-- 검색 폼 -->
+            <div class="top_search">
+    <form name="frmSearchTop" id="frmSearchTop" action="../goods/goods_search.php" method="get">
+        <fieldset>
+            <legend>검색폼</legend>
+            <div class="top_search_cont">
+                <div class="top_text_cont">
+                    <input type="text" id="search_form" name="keyword" class="top_srarch_text" title=""  placeholder="" autocomplete="off"/>
+                    <input type="image" src="/data/skin/front/moment_C/img/common/btn/btn_top_search.png" id="btnSearchTop" class="btn_top_srarch" title="검색" value="검색" alt="검색"/>
+                </div>
+                <!-- //top_text_cont -->
+                <div class="search_cont" style="display:none;">
+                    <input type="hidden" name="recentCount" value="10" />
+
+                    <script type="text/javascript">
+    $(function(){
+
+        /* 상단 검색 */
+        $('.top_search_cont input[name="keyword"]').on({
+            'focus':function(){
+                $(this).parents().find('.search_cont').show();
+            },
+            'blur':function(){
+                $('body').click(function(e){
+                    if (!$('.search_cont').has(e.target).length && e.target.name != 'keyword') {
+                        $(this).parents().find('.search_cont').hide();
+                    }
+                });
+                $('.btn_top_search_close').click(function(){
+                    $(this).parents().find('.search_cont').hide();
+                });
+            }
+        });
+
+        if($("input[name=recentCount]").val() > 0) {
+            $('.js_recom_box').removeClass('recom_box_only').addClass('recom_box');
+        }else{
+            $('.js_recom_box').removeClass('recom_box').addClass('recom_box_only');
+        }
+
+    });
+</script>
+<div class="js_recom_box ">
+    <dl>
+        <dt>추천상품</dt>
+        <dd>
+            <div class="recom_item_cont">
+                <!-- //recom_icon_box -->
+                <div class="recom_tit_box">
+                    <a href="../goods/goods_view.php?goodsNo=">
+                    </a>
+                </div>
+                <!-- //recom_tit_box -->
+                <div class="recom_money_box">
+                </div>
+                <!-- //recom_money_box -->
+                <div class="recom_number_box">
+                </div>
+                <!-- //recom_number_box -->
             </div>
-        </li>
-        <li>
-            <span>2016</span>
-            <div>
-                <p>한라유통(용인시) 물류창고 설립</p>
+            <!-- //recom_item_cont -->
+        </dd>
+    </dl>
+</div>
+
+                    <!-- //recom_box -->
+
+                    <div class="recent_box">
+                        <dl class="js_recent_area">
+                            <dt>최근검색어</dt>
+                            <dd>최근 검색어가 없습니다.</dd>
+                        </dl>
+                    </div>
+                    <!-- //recent_box -->
+                    <div class="seach_top_all">
+                        <button type="button" class="btn_top_search_close"><strong>닫기</strong></button>
+                    </div>
+                    <!-- //seach_top_all -->
+
+                </div>
+                <!-- //search_cont -->
             </div>
+            <!-- //top_search_cont -->
+        </fieldset>
+    </form>
+</div>
+<!-- //top_search -->
+            <!-- 검색 폼 -->
+
+        </div>
+        <!-- //header_search_cont -->
+    </div>
+    <!-- //header_search -->
+    <div class="header_gnb">
+
+
+        <div class="gnb">
+            
+            <!-- 전체 카테고리 출력 레이어 시작 -->
+            
+            <div class="gnb_all">
+    <strong>ALL CATEGORY</strong>
+    <a href="#;" class="btn_all_menu_open"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/common/btn/btn_allmenu_open.png" alt="전체메뉴보기"></a>
+</div>
+<div class="gnb_allmenu_wrap">
+
+</div>
+                    
+            <!-- 전체 카테고리 출력 레이어 끝 -->
+
+            <!-- 상단 카테고리 출력 시작 -->
+            <div class="gnb_left"><a href="#PREV" class="active">PREV</a></div>
+<div class="gnb_menu_box">
+    <ul class="depth0 gnb_menu0">
+        <li >
+            <a href="../goods/goods_list.php?cateCd=029" >회사소개</a>
         </li>
-        <li>
-            <span>2017</span>
-            <div>
-                <p>
-                    (주)엠엔디 컴퍼니(인천시)<br>
-                    공장설립
-                </p>
-                <p>농림부 HACCP 적용작업장</p>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=021" >보틀/텀블러</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=021001" >보틀</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001001" >PP캡보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001002" >메탈캡보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001003" >우드캡보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001004" >크리스탈캡보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001005" >알약캡보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001006" >차망(그린티)보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021001007" >쉐이크(속캡)보틀</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=021005" >테마보틀</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005001" >별자리보틀</a>
+                            <ul class="depth3">
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001001" >물병자리 01/20 ~ 02/18</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001002" >물고기자리 02/19 ~ 03/20</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001003" >양자리 03/21 ~ 04/19</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001004" >황소자리 04/20 ~ 05/20</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001005" >쌍둥이자리 05/21 ~ 06/21</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001006" >게자리 06/22 ~ 07/22</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001012" >사자자리 07/23 ~ 08/22</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001007" >처녀자리 08/23 ~ 09/23</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001008" >천칭자리 09/24 ~ 10/22</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001009" >전갈자리 10/23 ~ 11/22</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001010" >궁수자리 11/23 ~ 12/24</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005001011" >염소자리 12/25 ~ 01/19</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005002" >기념일보틀</a>
+                            <ul class="depth3">
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005002001" >연인DAY</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005002002" >명절DAY</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005002003" >성탄DAY</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005002004" >축하DAY</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005003" >동물보틀</a>
+                            <ul class="depth3">
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003001" >돼지</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003002" >양</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003003" >소</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003004" >말</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003005" >뱀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003006" >쥐</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003007" >범</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003008" >토끼</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003009" >개</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003010" >원숭이</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003011" >용</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005003012" >기타</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005004" >헬스/스포츠보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005005" >종교보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005006" >테마스토리보틀</a>
+                            <ul class="depth3">
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005006001" >악기보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005006002" >여인천하</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005006003" >계절보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005006004" >어린이보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005006005" >기업보틀</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005007" >FOOD보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005008" >나라별보틀</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021005009" >캘리그라피</a>
+                            <ul class="depth3">
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005009001" >사랑보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005009002" >감성보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005009003" >새해보틀</a>
+                                </li>
+                                <li >
+                                <a href="../goods/goods_list.php?cateCd=021005009004" >크리스마스보틀</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=021002" >리유저블</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=021003" >텀블러</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021003001" >진공텀블러</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=021003002" >(비)진공텀블러</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=021004" >특판제안품</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=022" >커피원두</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=022001" >홀빈(원두상태)</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001001" >케냐AA</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001002" >콜롬비아 수프리모 메델린</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001003" >탄자니아AA 킬리만자로</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001004" >과테말라 안티구아 SHB</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001005" >브라질 세하도 NY2 네츄럴</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022001006" >에티오피아 예가체프</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=022002" >분쇄(핸드드립)</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002001" >케냐AA</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002002" >콜롬비아 수프리모 메델린</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002003" >탄자니아AA 킬리만자로</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002004" >과테말라 안티구아 SHB</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002005" >브라질 세하도 NY2 네츄럴</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022002006" >에티오피아 예가체프</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=022003" >드립백</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003001" >케냐AA</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003002" >콜롬비아 수프리모 메델린</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003003" >탄자니아AA 킬리만자로</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003004" >과테말라 안티구아 SHB</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003005" >브라질 세하도 NY2 네츄럴</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003006" >에티오피아 예가체프</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=022003007" >혼합드립백 6종</a>
+                        </li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=022004" >디카페인</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=030" >아리에나타올</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030001" >지솔타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030002" >세면타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030007" >바스타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030003" >핸드타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030004" >스포츠타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030005" >전사타올</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=030006" >가운</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=023" >선물세트</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=023001" >식품</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=023004" >커피&텀블러</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=023002" >꽃(화분/회환)</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=023003" >생활용품</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=028" >친환경용품</a>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=024" >인쇄물</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024001" >달력</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024007" >명함/안내지/쿠폰</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024002" >봉투/빌지</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024003" >쇼핑백</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024006" >현수막/베너</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024005" >카다로그/리플렛</a>
+                </li>
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=024004" >케이스</a>
+                </li>
+            </ul>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=025" >꽃배달</a>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=026" >생활용품</a>
+        </li>
+        <li >
+            <a href="../goods/goods_list.php?cateCd=027" >작가그림</a>
+            <ul class="depth1">
+                <li >
+                    <a href="../goods/goods_list.php?cateCd=027001" >작가: 양서연</a>
+                    <ul class="depth2">
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=027001004" >작가프로필</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=027001001" >습작</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=027001002" >완성작</a>
+                        </li>
+                        <li >
+                            <a href="../goods/goods_list.php?cateCd=027001003" >작가상품</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="gnb_right"><a href="#NEXT">NEXT</a></div>
+            <!-- 상단 카테고리 출력 끝 -->
+
+            <!--스크롤 게시글 시작-->
+            <!--스크롤 게시글 끝-->
+
+        </div>
+        <!-- //gnb -->
+
+        <!-- //gnb_allmenu -->
+    </div>
+    <!-- //header_gnb -->
+</div>
+<!-- //header -->
+    </div>
+    <!-- //header_warp -->
+
+    <div id="container">
+        <div id="contents">
+        <!-- 본문 시작 -->
+
+            <!-- //location_wrap -->
+
+            <div class="sub_content">
+
+                <!-- //side_cont -->
+<div class="content_box" id="sheetprint">
+    <div class="service_tit">
+        연계고용부담금 감면 시뮬레이션
+    </div>
+    <p class="service_subtit">
+         * 필수입력사항 <span>[고객사 수급액], [예상 고용부담금액 작성표]</span>를 입력하시면 [최종 고용부담금 감면금액]이 자동 완성됩니다.
+    </p>                    
+    <div class="service_cont reduce" >
+        
+        <table  class="formTable">
+            <tr>
+                <th>*고객사 수급액</th>
+                <th>오보틀 예상매출<br />(전년도기준)</th>
+                <th>오보틀 장애인수</th>
+                <th>예상부담금 발생액 <br />(해당기간)</th>
+                <th>수급비율</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="item1" name="item1" val="" /> <span> 원</span></td>
+                <td><span id="item2"> 0 </span><span> 원</span></td>
+                <td><span id="item3"> 70 </span><span> 명</span></td>
+                <td>
+                    <span id='item4result'>0</span><span> 원</span>                   
+                </td>
+                <td><span id='item5'>0</span></td>
+                
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <div class="result">
+                        <span class="label"> ▶ 최종 고용부담금 감면금액(해당기간) : </span>
+                        <span class="result_cal" id="result_cal"> 0 </span><span> 원</span>            
+                    </div>                    
+                </td>
+            </tr>
+        </table>
+    </div>
+    <p class="service_subtit">
+         * 고용부담금 감면금액은 전년도 기준으로 변동될 수 있습니다.<br />
+         * 예상부담금 발생액은 하단의 표를 이용해 금액 확인해주세요.
+    </p> 
+
+<!--*******************************************-->
+
+    <div class="service_tit2">
+        예상부담금 발생액 작성표
+    </div>
+    <p class="service_subtit">
+         본 작성표를 입력하시면 상단 양식에서 [예상부담금 발생액] 과 [최종 고용부담금 감면금액]이 자동 완성됩니다.<br />
+          <span>* 필수입력사항 : [도급거래여부], [상시근로자수], [장애인근로자수]</span>
+    </p>
+    <div class="service_cont reduce" >
+        <table class="formTable employ">
+            <tr>
+                <th>
+                    <span><input type='radio' name='empRate' id="empRate1" value='0.031' checked /> 민간 사업주</span>
+                    <span><input type='radio' name='empRate' id="empRate2" value='0.036' /> 공공기관/지방공기업</span>
+                    <span><input type='radio' name='empRate' id="empRate3" value='0.036' /> 국가/자치단체(공무원 아닌 근로자)</span>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p id="empRate_1">민간기업의 장애인 의무 고용율은 3.1% (2023년 기준)</p>
+                    <p id="empRate_2">공공기관의 장애인 의무 고용율은 3.6% (2023년 기준)</p>
+                    <p id="empRate_3">국가 및 지자체의 장애인 의무 고용율은 3.6% (2023년 기준)</p>
+                </td>
+            </tr>            
+        </table>
+            
+        <table  class="formTable charge">
+            <colgroup>
+                  <col style="width:4%;">
+                  <col style="width:3%;">
+                  <col style="width:7%;">
+                  <col style="width:7%;">
+                  
+                  <col style="width:6%;">                  
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                                    
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                  
+                  <col style="width:6%;">
+                  <col style="width:6%;">
+                  
+                  <col style="width:9%;">                  
+                  <col style="width:9%;">
+
+            </colgroup>            
+            <tr>
+                <th rowspan="2" scope="col">월별</th>
+                <th rowspan="2" scope="col">도급<br />거래<br />여부</th>
+                <th rowspan="2" scope="col">*상시<br />근로자수</th>
+                <th rowspan="2" scope="col">의무<br />고용인원</th>
+                <th colspan="4" scope="col">장애인근로자수</th>
+                <th rowspan="2" scope="col">미달<br />고용인원<br />(미고용월)</th>                
+                <th colspan="5" scope="col">미달고용인원(고용월)</th>
+                <th rowspan="2" scope="col">예상부담금<br />발생액</th>
+                <th rowspan="2" scope="col">월감면액</th>
+                
+            </tr>
+            <tr>
+                <th scope="col">*경증<br />장애인</th>
+                <th scope="col">*중증장애인<br />(60시간이상)</th>
+                <th scope="col">*중증장애인<br />(60시간미만)</th>
+                <th scope="col">적용인원</th>                
+               
+                <th scope="col">계</th>
+                <th scope="col">1/4<br />미달</th>
+                <th scope="col">1/4~1/2<br />미달</th>
+                <th scope="col">1/2~3/4<br />미달</th>
+                <th scope="col">3/4<br />이상</th>                                
+            </tr>
+            <!--*********************************-->
+    <script>
+   
+        var row = 12;
+        for(var i = 1; i <= row; i++) {            
+            document.write( '<tr class="cal_tr">' );               
+            document.write( '<th>'+i+'1월</th>' );
+            document.write( '<th><input id="ck'+i+'_0" type="checkbox" name="applyMonth" /></th>' );
+            document.write( '<td><input type="text" id="c_'+i+'_1" name="c_'+i+'_1" value="0" onfocus=this.value="" /></td>' ); // 1.상시근로자수
+            document.write( '<td id="c_'+i+'_2">0</td>' );                                  // 2.의무고용인원
+            document.write( '<td><input type="text" id="c_'+i+'_3" name="c_'+i+'_3" value="0" onfocus=this.value="" /></td>' ); // 3.경증장애인
+            document.write( '<td><input type="text" id="c_'+i+'_4" name="c_'+i+'_4" value="0" onfocus=this.value="" /></td>' ); // 4.중증장애인60시간
+            document.write( '<td><input type="text" id="c_'+i+'_5" name="c_'+i+'_5" value="0" onfocus=this.value="" /></td>' ); // 5.중증장애인
+            document.write( '<td id="c_'+i+'_6">0</td>' );                                  // 6.적용인원계 
+            document.write( '<td id="c_'+i+'_7">0</td>' );                                  // 7.미고용월인원
+            document.write( '<td id="c_'+i+'_8">0</td>' );                                  // 8.계
+            document.write( '<td id="c_'+i+'_9">0</td>' );                                  // 9.1/4미달
+            document.write( '<td id="c_'+i+'_10">0</td>' );                                 // 10.1/4~1/2미달
+            document.write( '<td id="c_'+i+'_11">0</td>' );                                 // 11.1/2~3/4미달
+            document.write( '<td id="c_'+i+'_12">0</td>' );                                 // 12.3/4이상
+            document.write( '<th id="c_'+i+'_13">0</th>' );                                 // 13.예상부담금 발생액  
+            document.write( '<th id="c_'+i+'_14">0</th>' );                                 // 14.월감면액          
+            document.write( '</tr>' );
+         } 
+  
+        //오보틀 연매출계산
+        // (전년도매출 / 12) * 오늘기준 남을개월수
+        var lastyear = 5800000000; //전년도매출        
+        var month_avg = lastyear / 12 ;        
+        //$("#item2").text(Math.round(lastyear).toLocaleString()); //기본값 1년
+                                         
+        var empRate = 0.031;
+
+        var item3 = $("#item3").text(); 
+        
+        function item5(){                
+            var item1 = $("#item1").val(); // 111,111,111                
+            item1 = parseInt(item1.replace(/,/g, "")); //11111111  
+            
+            checkCount(); // 체크박스 도급거래여부 
+                                    
+            var item2 = $("#item2").text();
+            item2 = parseInt(item2.replace(/,/g, ""));
+
+            var toItem5 = item1 / item2;                
+            toItem5 = (Math.floor(toItem5 * 10000) / 10000).toFixed(4);    
+            if(isNaN(toItem5) == true || toItem5 == Infinity){
+                toItem5 = 0;
+            }            
+            $("#item5").text(toItem5);
+            
+            return toItem5;                     
+        };
+        // 체크박스 도급거래여부
+        function checkCount(){
+            var applyMonthCnt = $("input:checkbox[name='applyMonth']:checked").length;                      
+            var ob = month_avg * applyMonthCnt;         
+            $("#item2").text(Math.round(ob).toLocaleString());
+            // console.log(applyMonthCnt);
+        }; 
+                           
+            
+                                    
+        $(".formTable input").on('keyup change', function () {
+            
+           toItem5 = item5(); //수급비율 계산
+           
+               
+
+            var charge_total =0;
+            var charge_total_b = 0;
+            
+            // 의무고용율(고정값)
+            emprate = $("input[name=empRate]:checked").val();
+            if($("#empRate1").is(':checked') == true ) {
+                $("#empRate_1").show();
+                $("#empRate_2,#empRate_3").hide();                
+            }else if($("#empRate2").is(':checked') == true ) {
+                $("#empRate_2").show();
+                $("#empRate_1,#empRate_3").hide();                
+            }else if($("#empRate3").is(':checked') == true ) {
+                $("#empRate_3").show();
+                $("#empRate_2,#empRate_1").hide();                
+            }
+
+            $('.cal_tr td').each(function (idx) { 
+
+                var c_i_1 = parseFloat($('#c_'+idx+'_1').val()) || 0;                      
+                c_i_1 = Math.floor(c_i_1 * emprate);           
+
+                $('#c_'+idx+'_2').text(c_i_1);  //의무고용인원
+                  
+                var c_i_2 = parseFloat($('#c_'+idx+'_2').text());                
+                var c_i_3 = parseFloat($('#c_'+idx+'_3').val());
+                var c_i_4 = parseFloat($('#c_'+idx+'_4').val());
+                var c_i_5 = parseFloat($('#c_'+idx+'_5').val());
+                
+                var c_i_6 = c_i_3 + (c_i_4 *2) + c_i_5;
+                if(isNaN(c_i_6)) c_i_6 = 0;
+                $('#c_'+idx+'_6').text(c_i_6);  //장애인근로자수 적용인원 
+                
+                
+                var c_i_7 = 0;
+                var c_i_8 = c_i_2-c_i_6;
+
+                if(c_i_8 < 0) {
+                    c_i_8 = 0;
+                }
+                     
+                var ratio = parseFloat(c_i_8 / c_i_2).toFixed(2) ;
+                var ratioApply = 0;
+                
+                
+                $('#c_'+idx+'_9').text(0);
+                $('#c_'+idx+'_10').text(0);
+                $('#c_'+idx+'_11').text(0);
+                $('#c_'+idx+'_12').text(0);
+                
+                if(c_i_6 <= 0) {
+                    $('#c_'+idx+'_7').text(c_i_8);  //미고용월인원
+                    ratioApply = 2010580;
+                    $('#c_'+idx+'_8').text(c_i_6);                              
+                                        
+                }else{                    
+                    $('#c_'+idx+'_7').text(c_i_7);  //미고용월인원 : 0
+                    $('#c_'+idx+'_8').text(c_i_8);                    
+                    if(ratio > 0.75){
+                        $('#c_'+idx+'_9').text(c_i_8);
+                        ratioApply = 1689800;
+                                               
+                    }else if(0.5 < ratio && ratio <= 0.75){
+                        $('#c_'+idx+'_10').text(c_i_8);
+                        ratioApply = 1448400;
+                    }else if(0.25 < ratio && ratio <= 0.5){
+                        $('#c_'+idx+'_11').text(c_i_8);
+                        ratioApply = 1279420;
+                    }else{
+                        $('#c_'+idx+'_12').text(c_i_8);
+                        ratioApply = 1207000;
+                    }                   
+                }
+                 console.log("r : "+ratioApply);   
+                   
+                                
+                var c_i_13 = c_i_8 * ratioApply;
+                $('#c_'+idx+'_13').text(c_i_13.toLocaleString()); // 예상부담금 발생액
+                
+                var c_i_14 = 0;
+                if(c_i_2 > 0) {
+                    c_i_14 = ratioApply * toItem5 * item3;
+                }       
+                
+                            
+                c_i_14 = Math.floor(c_i_14 / 10) * 10;
+                c_i_14 = Number(c_i_14);
+                $('#c_'+idx+'_14').text(c_i_14.toLocaleString()); // 월감면액
+             
+                charge = $('#c_'+idx+'_13').text().replace(/,/g, ""); 
+                charge_b = $('#c_'+idx+'_14').text().replace(/,/g, "");       
+                charge_total += Number(charge);
+                charge_total_b += Number(charge_b);
+                
+                                
+            });
+            
+
+
+
+
+            
+            var max1 = 0;
+            max1 = item1 * 0.5;
+            var max2 = 0;
+            max2 = charge_total * 0.6;
+            
+            if(charge_total_b > max2) charge_total_b = Math.round(max2);
+            if(charge_total_b > max1) charge_total_b = Math.round(max1);
+            
+            
+            $('#charge_total, #item4result').text(charge_total.toLocaleString()); // 예상부담금 발생액 합계
+            $('#charge_total_b, #result_cal').text(charge_total_b.toLocaleString()); // 감면금액 합계
+
+        });
+
+ 
+    </script>
+            <tr>
+                <th colspan="14">예상부담금 발생액 합계</th>
+                <td colspan="2"><span id="charge_total">0</span> 원</td>                
+            </tr>
+            <tr>
+                <th colspan="14">감면금액 합계</th>
+                <td colspan="2"><span id="charge_total_b">0</span> 원</td>                
+            </tr>            
+        
+        </table>
+
+    </div>
+    
+     <div class="button">
+        <span class="blue"><a href="#none" class="" id="exePrint"  onclick="javascript:print();" >프린트출력</a></span>
+        <span class="blue"><a href="/main/html.php?htmid=service/reduce4.html" class="" target="_blank">고용부담금 감면계산 세부내역</a></span>
+        <span class="blue"><a href="/service/qa.php" class="" >연계고용 문의사항</a></span>
+    </div> 
+        
+</div>
+
+
+
+<!--*******************************************-->
+
+
+<script>
+            
+  function print() {
+
+        let element = document.getElementById("sheetprint");
+        const iframe = document.body.appendChild(document.createElement("iframe"));
+        
+        iframe.style.display = "none";
+        
+        const idoc = iframe.contentDocument;
+        idoc.head.innerHTML = document.head.innerHTML;
+        idoc.body.innerHTML = element.innerHTML;
+        
+        const inputs = element.querySelectorAll("input");
+        const printInputs = idoc.body.querySelectorAll("input");
+        
+        for (let i = 0; i < inputs.length; i++) {
+          printInputs[i].value = inputs[i].value;
+        }
+        
+        const selects = element.querySelectorAll("select");
+        const printSelects = idoc.body.querySelectorAll("select");
+        
+        for (let i = 0; i < selects.length; i++) {
+          printSelects[i].value = selects[i].value;
+        }
+        
+        window.setTimeout(() => {
+          iframe.contentWindow.print();
+          document.body.removeChild(iframe);
+        }, 1000);
+
+
+  }
+    
+    const input = document.querySelector('#item1');
+    input.addEventListener('keyup', function(e) {
+      let value = e.target.value;
+      value = Number(value.replaceAll(',', ''));
+      if(isNaN(value)) {
+        input.value = 0;
+      }else {
+        const formatValue = value.toLocaleString('ko-KR');
+        input.value = formatValue;
+      }
+    })   
+    
+        
+
+             
+</script>
+
+    
+<!-- //content_box -->
             </div>
-        </li>
-        <li>
-            <span>2018</span>
-            <div>
-                <p>
-                    (주)엘앤씨 에프앤비(고양시)<br>
-                    공장설립
-                </p>
-                <p>농림부 HACCP 적용작업장</p>
-            </div>
-        </li>
-        <li>
-            <span>2019</span>
-            <div>
-                <p>
-                    돈육(돈까스) 성형기 및<br>
-                    커틀릿 제품 생산
-                </p>
-            </div>
-        </li>
-        <li>
-            <span>2020</span>
-            <div>
-                <p>
-                    김포시 하성면 소재 <br>
-                    공장부지 매입 및 설립
-                </p>
-            </div>
-        </li>
-        <li>
-            <span>2021</span>
-            <div>
-                <p>식육포장처리업 허가 및 
-                    HACCP인증 취득</p>
-                <p>
-                    김포시 소재 제2 물류창고 설립<br>
-                    (경기도 김포시 하성면 대지1000평 규모)
-                </p>
-            </div>
-        </li>
-        <li>
-            <span>2022</span>
-            <div>
-                <p>벤처기업 확인서 획득</p>
-                <p>
-                    장애인표준사업장 <br>
-                    인증 획득
-                </p>
-            </div>
-        </li>
-    </ol>
+            <!-- //sub_content -->
+        </div>
+        <!-- //본문 끝 contents -->
+    </div>
+    <!-- //container -->
+
+    <div id="footer_wrap">
+<div class="content_info_wrap">
+    <div class="content_info">
+        <div class="cs_center">
+            <h3>CS CENTER</h3>            
+            <strong><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/banner/78412cb505dba7f0981003b51ac9b541_82943.png"  alt="전화기" title="전화기"   /> 1688-1676</strong>
+            <p>평일 AM 09:00 ~ PM 18:00<br />
+토, 일, 공휴일 휴무<br />
+친절히 상담해 드립니다.</p>
+        </div>
+        <!-- //cs_center -->
+        <div class="bank_info">
+            <h3>BANK INFO</h3>            
+            <p class="bank_name"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/banner/9fcc72cce8be2f395c1ba5dc95c78cd3_22767.png"  alt="신한은행" title="신한은행"   /> 신한은행</strong>
+            <strong>140-011-713272</strong>
+            <p class="depositor">예금주 : 주식회사오보틀</p>
+        </div>
+        <!-- //bank_info -->
+        <div class="notice_list">
+            <h3><a href="../board/list.php?bdId=notice" title="공지 리스트">NOTICE</a></h3>
+            <ul>
+    <li>
+        <span></span>
+        <a href="../board/view.php?bdId=notice&sno=3">비밀번호 재등록안내 (리뉴얼전 비밀번...</a>
+    </li>
+    <li>
+        <span></span>
+        <a href="../board/view.php?bdId=notice&sno=2">오보틀 홈페이지를 새롭게 단장했습니다</a>
+    </li>
+</ul>
+
+        </div>
+        <!-- //notice_list -->
+        <div class="service">
+            <h3>SERVICE</h3>            
+                <div class="heading">
+                    <a href="/mypage/order_list.php">
+                        <i class="fa fa-truck circle light-circle normal"></i>
+                        <p class="ellipsis">주문/배송</p>
+                    </a>
+                </div>
+                <div class="heading">
+                    <a href="/order/cart.php">
+                        <i class="fa fa-basket-shopping circle light-circle normal"></i>
+                        <p class="ellipsis">장바구니</p>
+                    </a>
+                </div>
+                <div class="heading">
+                    <a href="/board/list.php?bdId=selfdesign">
+                        <i class="fa fa-heart circle light-circle normal"></i>
+                        <p class="ellipsis">셀프인쇄</p>
+                    </a>
+                </div>
+                <div class="heading">
+                    <a href="/service/qa.php">
+                        <i class="fa fa-eye circle light-circle normal"></i>
+                        <p class="ellipsis">1:1문의</p>
+                    </a>
+                </div>
+            
+        </div>
+        <!-- //service -->        
+    </div>
+    <!-- //content_info -->
+</div>
+<!-- //content_info_wrap -->
+
+<div id="footer">
+    <div class="foot_list">
+        <ul>
+            <li><a href="http://ohbottle.net/" target="_blank">회사소개</a></li>
+            <li><a href="../service/agreement.php">이용약관</a></li>
+            <li><a href="../service/private.php"><strong>개인정보처리방침</strong></a></li>
+            <li><a href="../service/guide.php">이용안내</a></li>
+            <li><a href="../service/cooperation.php">광고/제휴 문의</a></li>
+            <li><a href="http://ohbottle.net/" target="_blank">(주)오보틀 홈페이지</a></li>
+            <li style="margin-top:-4px;"><a href="https://www.linkedin.com/company/ohbottle-co-ltd/?viewAsMember=true" target="_blank"><a href="https://www.linkedin.com/company/ohbottle-co-ltd/?viewAsMember=true"  target="_blank" ><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/banner/fdff0e671376f4630e2ee9c934c3cb3b_13230.png"  alt="링크드인" title="링크드인"   /></a></a></li>
+        </ul>
+    </div>
+    <!-- //foot_list -->
+    <div class="foot_cont">
+        <!-- //foot_logo -->
+        <div class="foot_info">
+            <!-- <address>
+                <strong>(주)오보틀</strong>
+                <span>경기도 양주시 백석읍 중앙로 292-56 오보틀</span>
+            </address> -->
+            <p class="foot_info_list">
+                (주)오보틀
+                대표 : 김윤성
+                대표번호 : 1688-1676
+                팩스번호 : 050-4848-1676
+                주소 : 경기도 양주시 백석읍 중앙로 292-56 오보틀
+            </p>
+            <p class="foot_info_list">
+                사업자등록번호 : 217-81-47640
+                 <a href="#" class="btn_licensee_info" onclick="gd_popup_bizInfo('2178147640'); return false;"> [사업자번호조회] </a>
+                / 통신판매업신고번호 : 2021-경기양주-1063
+                / 개인정보관리자 : 
+                메일 : <a href="mailto:godo@godo.co.kr" class="btn_email"> ob1676@naver.com </a>
+                / 호스팅제공 : 엔에이치엔커머스(주)
+            </p>
+            <!-- // -->
+            <p class="copyright">copyright. 2022. <strong>ohbottle.com</strong>. All rights reserved.</p>
+        </div>
+        <!-- //foot_info -->
+    </div>
+    
+    <!--//foot_fix-->
+    <!--{// ? gSess.memId == 'test0001' }-->
+ 
+    <div class="foot_fix">
+        <div class="foot_fix_inner">            
+
+                <a href="/"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_08.jpg" alt="홈으로" title="홈으로"></a>
+                <a href="/member/join_agreement.php"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_01.jpg" alt="회원가입" title="회원가입"></a>
+                <a href="/board/list.php?bdId=levelup"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_02.jpg" alt="등업요청" title="등업요청"></a>
+                <a href="/board/list.php?bdId=bulk"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_03.jpg" alt="대량견적문의" title="대량견적문의"></a>
+                
+                <a href="/service/notice.php"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_04.jpg" alt="공지사항" title="공지사항"></a>
+                <a href="/board/list.php?bdId=cogallery"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_07.jpg" alt="납품사례" title="납품사례"></a>
+                <a href="/board/list.php?bdId=realphoto"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_07_1.jpg" alt="인쇄사진" title="인쇄사진"></a>
+                <a href="https://ohbottle.biz/" target="_blank"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_06.jpg" alt="영문사이트" title="영문사이트"></a>
+                
+                <a href="http://pf.kakao.com/_SsxmJxj" target="_blank"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_05.jpg" alt="카카오톡상담" title="카카오톡상담"></a>
+                
+                
+                <a href="/member/login.php"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_09.jpg" alt="로그인" title="로그인"></a>
+                <a href="/mypage/index.php"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_09_1.jpg" alt="마이페이지" title="마이페이지"></a>
+                <a href="/order/cart.php"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_10.jpg" alt="장바구니" title="장바구니"></a>
+                <div class="foot_fix_search">
+                    
+                    <form name="frmSearchTop" id="frmSearchTop" action="../goods/goods_search.php" method="get">
+                        <fieldset>
+
+                            <div class="top_search_cont">
+                                <div class="top_text_cont">
+                                    <input type="text" id="search_form" name="keyword" class="top_srarch_text" title=""  placeholder="상품명 또는 코드입력" autocomplete="off"/>
+                                    <input type="image" src="/data/skin/front/moment_C/img/common/btn/btn_top_search.png" id="btnSearchTop" class="btn_top_srarch" title="검색" value="검색" alt="검색"/>
+                                </div>
+
+                            </div>
+                            <!-- //top_search_cont -->
+                        </fieldset>
+                    </form>
+    
+    
+                </div>
+
+        </div>       
+    </div>
+    <div class="foot_fix_btn">
+                <a href="#none"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_11_off.jpg" id="toggleButton" alt="하단메뉴" title="하단메뉴"/></a>
+      
+    </div>          
+    <!--{// / }-->
+    <script>
+        $(document).ready(function() {
+            const toggleButton = $('#toggleButton');
+            const movableBox = $('.foot_fix');
+            let isOpen = false;
+            
+            
+        
+            toggleButton.click(function() {
+                console.log("aaa");
+                if (isOpen) {
+                    movableBox.css('transform', 'translateY(0)');
+                    toggleButton.attr("src", "https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/img/foot_fix_11_off.jpg");
+                } else {
+                    movableBox.css('transform', 'translateY(50px)');
+                    toggleButton.attr("src", "/data/skin/img/foot_fix_11_on.jpg");
+                }
+                isOpen = !isOpen;
+            });
+        });
+
+    </script>     
+
+    <!-- //foot_cont -->
+    <div class="foot_certify">
+        <span><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/commonimg/logo_comodo.png" alt="보안서버 적용 확인"></span>
+        <span></span>
+        <span><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/commonimg/logo_cash_receipt.png" alt="현금영수증 가맹점"></span>
+    </div>
+    <!-- //foot_certify -->
+</div>
+<!-- //footer -->
+    </div>
+    <!-- //footer_wrap -->
+
+    <div class="scroll_wrap">
+
+        <!-- 좌측 스크롤 배너 -->
+        <div id="scroll_left">
+
+        </div>
+        <!-- //scroll_left -->
+        <!-- //좌측 스크롤 배너 -->
+
+
+        <!-- 우측 스크롤 배너 -->
+        <div id="scroll_right">
+<div class="right_banner">
+</div>
+<div class="scroll_right_cont">
+    <h4>TODAY VIEW</h4>
+
+    <div class="scr_paging">
+        <button type="button" class="bnt_scroll_prev" title="최근본 이전 상품"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/common/btn/btn_scroll_prev.png" alt="최근본 이전 상품"></button>
+        <span><strong class="js_current">0</strong>/<span class="js_total" style="float:none;width:auto;">2</span></span>
+        <button type="button" class="bnt_scroll_next" title="최근본 다음 상품"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/common/btn/btn_scroll_next.png" alt="최근본 다음 상품"></button>
+    </div>
+    <!-- //scr_paging -->
+</div>
+<span class="btn_scroll_top"><a href="#TOP"><img src="https://cdn-pro-web-215-6.cdn-nhncommerce.com/ob1676_godomall_com/data/skin/front/moment_C/img/common/btn/btn_scroll_top.png" alt="상단으로 이동"/></a></span>
+
+<script type="text/javascript">
+    // DOM 로드
+    $(function () {
+        $('.scroll_right_cont').todayGoods();
+    });
+
+    // 최근본상품 리스트 페이징 처리 플러그인
+    $.fn.todayGoods = function () {
+        // 기본값 세팅
+        var self = $(this);
+        var setting = {
+            page: 1,
+            total: 0,
+            rowno: 5
+        };
+        var element = {
+            goodsList: self.find('ul > li'),
+            closeButton: self.find('ul > li > button'),
+            prev: self.find('.scr_paging > .bnt_scroll_prev'),
+            next: self.find('.scr_paging > .bnt_scroll_next'),
+            paging: self.find('.scr_paging')
+        };
+
+        // 페이지 갯수 설정
+        setting.total = Math.ceil(element.goodsList.length / setting.rowno);
+
+        // 화면 초기화 및 갱신 (페이지 및 갯수 표기)
+        var init = function () {
+            if (setting.total == 0) {
+                setting.page = 0;
+                element.paging.hide();
+            }
+            self.find('ul').hide().eq(setting.page - 1).show();
+            self.find('.scr_paging .js_current').text(setting.page);
+            self.find('.scr_paging .js_total').text(setting.total);
+        }
+
+        // 삭제버튼 클릭
+        element.closeButton.click(function(e){
+            $.post('../goods/goods_ps.php', {
+                'mode': 'delete_today_goods',
+                'goodsNo': $(this).data('goods-no')
+            }, function (data, status) {
+                // 값이 없는 경우 성공
+                if (status == 'success' && data == '') {
+                    location.reload(true);
+                }
+                else {
+                    console.log('request fail. ajax status (' + status + ')');
+                }
+            });
+        });
+
+        // 이전버튼 클릭
+        element.prev.click(function (e) {
+            setting.page = 1 == setting.page ? setting.total : setting.page - 1;
+            init();
+        });
+
+        // 다음버튼 클릭
+        element.next.click(function (e) {
+            setting.page = setting.total == setting.page ? 1 : setting.page + 1;
+            init();
+        });
+
+        // 화면 초기화
+        init();
+    };
+</script>
+        </div>
+        <!-- //scroll_right -->
+        <!-- //우측 스크롤 배너 -->
+
+
+    </div>
+    <!-- //scroll_wrap -->
+
+
+    <!-- 퀵 검색 폼 -->
+    <!-- 퀵 검색 폼 -->
+
+</div>
+<!-- //wrap -->
+
+<!-- 쇼핑 카트 탭 -->
+
+<!-- //쇼핑 카트 탭 -->
+
+<!-- 회원가입 유도 푸시 -->
+
+<!-- //회원가입 유도 푸시 -->
+
+<!-- 절대! 지우지마세요 : Start -->
+<div id="layerDim" class="dn">&nbsp;</div>
+<iframe name="ifrmProcess" src='/blank.php' style="display:none" width="100%" height="0" bgcolor="#000"></iframe>
+<!-- 절대! 지우지마세요 : End -->
+
+<!-- 외부 스크립트 -->
+
+
 </body>
 </html>

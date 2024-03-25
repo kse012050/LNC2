@@ -12,9 +12,9 @@
     --spacing: 15px;
 }
 
-@media screen and (950px <= width) {
+@media screen and (1200px <= width) {
     :root{--headerHeight: 100px;}
 }
-@media screen and (width < 950px) {
+@media screen and (width < 1200px) {
     :root{--headerHeight: 58px;}
 }
