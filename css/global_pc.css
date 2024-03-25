@@ -15,6 +15,14 @@ aside a:not(:last-child){margin-bottom: 20px;}
 /* 버튼 */
 [class*="btn-"]{width: 264px; font-size: 20px;}
 .btn-bg{line-height: 70px;}
+.btnBox{gap: 30px; margin-top: 100px;}
+.btn-border{line-height: 68px;}
+.btnBox [class*="btn-"], input[type="submit"]{width: 230px;}
+
+
+/* 게시판 공통 */
+.boardBox li a strong{font-size: 20px; margin-bottom: 10px;}
+.boardBox li a time{font-size: 16px;}
 
 
 /* 서버 페이지 공통 */
@@ -31,6 +39,8 @@ aside a:not(:last-child){margin-bottom: 20px;}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
 .employPolicyPage section p,
 .employCalculatorPage section section h3 + p{font-size: 18px; line-height: 24px;}
+/* 소식, 문의 공통 */
+:is(.newsPage, .inquiryPage) .contentsBox section h2{font-size: 50px;}
 /* 회사소게 공통 */
 .aboutAsPage section:not(:last-of-type){margin-bottom: 200px;}
 

@@ -141,3 +141,19 @@
 .employCalculatorPage .contentsBox section section .tableBottom{display: flex; align-items: center;}
 .employCalculatorPage .contentsBox section section .tableBottom p{font-size: 18px; padding-inline: 30px; display: flex; justify-content: space-between;}
 .employCalculatorPage .contentsBox section section .tableBottom p:not(:last-of-type){border-right: 2px solid black;}
+
+
+/* 소식 */
+.newsPage .contentsBox section h2{margin-bottom: 80px;}
+
+
+/* 상세 */
+.detailPage .contentsBox > section h2{font-size: 32px;}
+.detailPage .contentsBox > section time{font-size: 16px;}
+.detailPage .contentsBox > section .contentArea{padding-block: 60px 100px; margin-top: 60px;}
+.detailPage .contentsBox > section .contentArea img{margin-bottom: 40px;}
+.detailPage .contentsBox > section .contentArea p{font-size: 18px; line-height: 26px;}
+.detailPage .contentsBox > section .contentArea p:not(:last-of-type){margin-bottom: 26px;}
+.detailPage .contentsBox > section section{margin-top: 160px;}
+.detailPage .contentsBox > section section h3{font-size: 28px; margin-bottom: 40px;}
+.detailPage .contentsBox > section .boardBox{gap: 30px;}

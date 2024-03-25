@@ -115,3 +115,26 @@
 .employCalculatorPage .contentsBox section section .tableBottom p:not(:last-of-type){position: relative; padding-bottom: 20px; margin-bottom: 20px;}
 .employCalculatorPage .contentsBox section section .tableBottom p:not(:last-of-type)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: 50px; height: 2px; transform: translateX(-50%) translateY(-50%); background-color: black;}
 .employCalculatorPage .contentsBox section section .tableBottom p span{display: block; font-size: 18px; margin-top: 10px;}
+
+
+/* 소식 */
+.newsPage .contentsBox section h2{margin-bottom: 50px;}
+
+
+/* 뉴스 */
+.newsPage .boardBox{display: block;}
+.newsPage .boardBox li{width: 100%;}
+.newsPage .boardBox li:not(:last-child){margin-bottom: 40px;}
+.newsPage .boardBox li a{display: block;}
+
+
+/* 상세 */
+.detailPage .contentsBox > section h2{font-size: 24px; line-height: 32px;}
+.detailPage .contentsBox > section time{font-size: 14px;}
+.detailPage .contentsBox > section .contentArea{padding-block: 60px; margin-top: 50px;}
+.detailPage .contentsBox > section .contentArea img{margin-bottom: 30px;}
+.detailPage .contentsBox > section .contentArea p{font-size: 15px; line-height: 22px;}
+.detailPage .contentsBox > section .contentArea p:not(:last-of-type){margin-bottom: 22px;}
+.detailPage .contentsBox > section section{margin-top: 100px;}
+.detailPage .contentsBox > section section h3{font-size: 20px; margin-bottom: 30px;}
+.detailPage .contentsBox > section .boardBox{gap: 20px;}

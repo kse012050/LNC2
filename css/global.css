@@ -30,17 +30,16 @@ aside a strong{font-weight: 700;}
 /* 버튼 */
 [class*="btn-"]{font-weight: 700; text-align: center;}
 .btn-bg{color: white; background-color: var(--color-point01); border: none;}
-.btn-border{line-height: 68px; color: var(--color-point01); border: 1px solid var(--color-point01); box-sizing: border-box;}
-.btnBox{gap: 30px; margin-top: 100px; display: flex; justify-content: center; align-items: center;}
-.btnBox [class*="btn-"], input[type="submit"]{width: 230px;}
+.btn-border{color: var(--color-point01); border: 1px solid var(--color-point01); box-sizing: border-box;}
+.btnBox{display: flex; justify-content: center; align-items: center;}
 
 
 /* 게시판 공통 */
 .boardBox{display: flex;}
 .boardBox li{width: 31.667%;}
 .boardBox li a img{margin-bottom: 20px;}
-.boardBox li a strong{font-size: 20px; margin-bottom: 10px; font-weight: 700; display: block;}
-.boardBox li a time{font-size: 16px; font-weight: 400; color: var(--color-font03);}
+.boardBox li a strong{font-weight: 700; display: block;}
+.boardBox li a time{font-weight: 400; color: var(--color-font03);}
 
 
 /* 페이지네이션 */
@@ -96,7 +95,7 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 :is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
 /* 소식, 문의 공통 */
 :is(.newsPage, .inquiryPage) .contentsBox{padding-top: 100px;}
-:is(.newsPage, .inquiryPage) .contentsBox section h2{font-size: 50px; font-weight: 700;}
+:is(.newsPage, .inquiryPage) .contentsBox section h2{font-weight: 700;}
 
 
 /* 해더 */
