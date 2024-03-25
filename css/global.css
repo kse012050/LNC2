@@ -43,28 +43,20 @@ aside a strong{font-weight: 700;}
 
 
 /* 페이지네이션 */
-.paginationBox{display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 80px;}
-.paginationBox a{width: 30px;}
+.paginationBox{display: flex; justify-content: center; align-items: center;}
 .paginationBox > a{aspect-ratio: 1; background: url(../images/icon-pagination.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover;}
-.paginationBox ol{display: flex; align-items: center; gap: 10px; margin-inline: 10px;}
-.paginationBox ol li a{line-height: 30px; font-size: 16px; font-weight: 400; text-align: center;}
+.paginationBox ol{display: flex; align-items: center; gap: 10px;}
+.paginationBox ol li a{font-weight: 400; text-align: center;}
 .paginationBox ol li.active a{font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px;}
 
 
 /* 입력 폼 */
 .inputBox label{cursor: pointer;}
-.inputBox ul{margin-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: space-between;}
-.inputBox ul li:not([class]){width: 46.667%;}
-.inputBox ul li.full{width: 100%;}
-.inputBox ul li:not(:last-child){margin-bottom: 40px;}
-.inputBox ul li > label:first-child{font-size: 16px; margin-bottom: 12px; font-weight: 700; display: flex; align-items: start;}
+.inputBox ul li > label:first-child{margin-bottom: 12px; font-weight: 700; display: flex; align-items: start;}
 .inputBox ul li:has(:required) > label:first-child::after{content: '*'; color: var(--color-point02);}
-.inputBox ul li div :is(input, textarea){padding: 20px; width: 100%; border: 1px solid var(--color-line01); box-sizing: border-box;}
+.inputBox ul li div :is(input, textarea){width: 100%; border: 1px solid var(--color-line01); box-sizing: border-box;}
 .inputBox ul li div :is(input, textarea)::placeholder{color: var(--color-font04);}
-.inputBox ul li div input{height: 60px;}
-.inputBox ul li div textarea{height: 300px;}
-.inputBox input[type="checkbox"] + label::before{margin-right: 10px;}
-.inputBox + input[type="submit"]{margin-top: 100px; display: block; margin-inline: auto;}
+.inputBox + input[type="submit"]{display: block; margin-inline: auto;}
 
 /* 체크박스 */
 input[type="checkbox"] + label{font-size: 16px; display: flex; align-items: center;}
@@ -103,6 +95,7 @@ header{position: fixed; left: 0; top: 0; width: 100%; display: flex; justify-con
 header h1 a{aspect-ratio: 94 / 60; display: block; background-image: url(../images/logo.png);}
 header nav ul li a{display: flex; align-items: center; font-weight: 700;}
 header nav ul li:last-child a::before{content: ''; aspect-ratio: 30 / 24; background: url(../images/icon-inquiry.png) no-repeat center / cover; margin-right: 5px;}
+[class*="Page"]:not(.mainPage) header{background-color: white;}
 
 
 /* 푸터 */

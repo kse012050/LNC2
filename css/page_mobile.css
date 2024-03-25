@@ -138,3 +138,7 @@
 .detailPage .contentsBox > section section{margin-top: 100px;}
 .detailPage .contentsBox > section section h3{font-size: 20px; margin-bottom: 30px;}
 .detailPage .contentsBox > section .boardBox{gap: 20px;}
+
+
+/* 문의 */
+.inquiryPage .contentsBox section h2 + p{margin-bottom: 60px;}

@@ -25,6 +25,27 @@ aside a:not(:last-child){margin-bottom: 20px;}
 .boardBox li a time{font-size: 16px;}
 
 
+/* 페이지네이션 */
+.paginationBox{gap: 8px; margin-top: 80px;}
+.paginationBox a{width: 30px;}
+.paginationBox ol{margin-inline: 10px;}
+.paginationBox ol li a{line-height: 30px; font-size: 16px;}
+
+
+/* 입력 폼 */
+.inputBox ul{margin-bottom: 40px;}
+.inputBox ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
+.inputBox ul li:not([class]){width: 46.667%;}
+.inputBox ul li.full{width: 100%;}
+.inputBox ul li:not(:last-child){margin-bottom: 40px;}
+.inputBox ul li > label:first-child{font-size: 16px; margin-bottom: 12px;}
+.inputBox ul li div :is(input, textarea){padding: 20px;}
+.inputBox ul li div input{height: 60px;}
+.inputBox ul li div textarea{height: 300px;}
+.inputBox input[type="checkbox"] + label::before{margin-right: 10px;}
+.inputBox + input[type="submit"]{margin-top: 100px;}
+
+
 /* 서버 페이지 공통 */
 [class*="Page"] > footer{margin-top: 200px;}
 .topBox p:first-of-type{font-size: 50px; line-height: 66px;}

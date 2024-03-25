@@ -157,3 +157,7 @@
 .detailPage .contentsBox > section section{margin-top: 160px;}
 .detailPage .contentsBox > section section h3{font-size: 28px; margin-bottom: 40px;}
 .detailPage .contentsBox > section .boardBox{gap: 30px;}
+
+
+/* 문의 */
+.inquiryPage .contentsBox section h2 + p{margin-bottom: 80px;}
