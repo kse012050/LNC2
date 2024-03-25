@@ -103,9 +103,9 @@
 .employCalculatorPage .contentsBox > section > div strong mark::after{content: '원'; color: black;}
 .employCalculatorPage .contentsBox > section > div small{font-weight: 300; color: var(--color-font02);}
 .employCalculatorPage .contentsBox section section > mark{font-weight: 300; display: block;}
-.employCalculatorPage .contentsBox section section > div:not([class]){margin-bottom: 40px; gap: 10px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;}
-.employCalculatorPage .contentsBox section section > div:not([class]) button{font-weight: 700; white-space: nowrap; color: var(--color-point01); border: 2px solid var(--color-point01); border-radius: 30px; box-sizing: border-box;}
-.employCalculatorPage .contentsBox section section > div:not([class]) button.active{color: white; background-color: var(--color-point01); position: relative;}
+.employCalculatorPage .contentsBox section section > .tab-empRate{margin-bottom: 40px; gap: 10px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;}
+.employCalculatorPage .contentsBox section section > .tab-empRate button{font-weight: 700; white-space: nowrap; color: var(--color-point01); border: 2px solid var(--color-point01); border-radius: 30px; box-sizing: border-box;}
+.employCalculatorPage .contentsBox section section > .tab-empRate button.active{color: white; background-color: var(--color-point01); position: relative;}
 .employCalculatorPage .contentsBox section section > strong{font-weight: 600;}
 .employCalculatorPage .contentsBox section section > span{font-weight: 300; color: var(--color-font03);}
 .employCalculatorPage .contentsBox section section .tableArea{overflow: auto;}

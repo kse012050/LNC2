@@ -67,7 +67,7 @@
                     <li>
                         <p>*고객사 수급액</p>
                         <div data-unit="원">
-                            <input type="text">
+                            <input type="text" id="item1" name="item1">
                         </div>
                     </li>
                     <li>
@@ -75,13 +75,13 @@
                             LNC 예상매출<br class="pc">
                             (전년도기준)
                         </p>
-                        <div data-unit="원">
+                        <div data-unit="원" id="item2">
                             0
                         </div>
                     </li>
                     <li>
                         <p>LNC 장애인수</p>
-                        <div data-unit="명">
+                        <div data-unit="명" id="item3">
                             70
                         </div>
                     </li>
@@ -90,33 +90,226 @@
                             예상부담금 발생액<br class="pc">
                             (해당기간)
                         </p>
-                        <div data-unit="원">
+                        <div data-unit="원"  id='item4result'>
                             0
                         </div>
                     </li>
                     <li>
                         <p>수급비율</p>
-                        <div>
+                        <div id='item5'>
                             0
                         </div>
                     </li>
                 </ul>
                 <div>
-                    <strong>최종 고용부담금 감면금액 (해당기간) : <mark class="point02">0</mark></strong>
+                    <strong>최종 고용부담금 감면금액 (해당기간) : <mark class="point02" id="result_cal">0</mark></strong>
                     <small>* 고용부담금 감면금액은 전년도 기준으로 변동될 수 있습니다.</small>
                     <small>* 예상부담금 발생액은 하단의 표를 이용해 금액 확인해주세요.</small>
                 </div>
+                <script>
+                    $(document).ready(function(){
+                        
+
+                        var row = 12;
+                        let htmlContents;
+                        for(var i = 1; i <= row; i++) {            
+                            htmlContents = ''
+                            htmlContents += '<tr class="cal_tr">'
+                            htmlContents += '<th>'+i+'월</th>'
+                            htmlContents += '<th><input id="ck'+i+'_0" type="checkbox" name="applyMonth" /><label for="ck'+i+'_0"></label></th>'
+                            htmlContents += '<td><input type="text" id="c_'+i+'_1" name="c_'+i+'_1" value="0" onfocus=this.value="" /></td>'
+                            htmlContents += '<td id="c_'+i+'_2">0</td>'
+                            htmlContents += '<td><input type="text" id="c_'+i+'_3" name="c_'+i+'_3" value="0" onfocus=this.value="" /></td>'
+                            htmlContents += '<td><input type="text" id="c_'+i+'_4" name="c_'+i+'_4" value="0" onfocus=this.value="" /></td>'
+                            htmlContents += '<td><input type="text" id="c_'+i+'_5" name="c_'+i+'_5" value="0" onfocus=this.value="" /></td>'
+                            htmlContents += '<td id="c_'+i+'_6">0</td>' 
+                            htmlContents += '<td id="c_'+i+'_7">0</td>' 
+                            htmlContents += '<td id="c_'+i+'_8">0</td>' 
+                            htmlContents += '<td id="c_'+i+'_9">0</td>' 
+                            htmlContents += '<td id="c_'+i+'_10">0</td>'
+                            htmlContents += '<td id="c_'+i+'_11">0</td>'
+                            htmlContents += '<td id="c_'+i+'_12">0</td>'
+                            htmlContents += '<th id="c_'+i+'_13">0</th>'
+                            htmlContents += '<th id="c_'+i+'_14">0</th>'
+                            htmlContents += '</tr>'
+                            $('.tableArea table tbody').append(htmlContents)
+                        } 
+
+                        var lastyear = 5800000000; //전년도매출        
+                        var month_avg = lastyear / 12 ;        
+                        //$("#item2").text(Math.round(lastyear).toLocaleString()); //기본값 1년
+                                                        
+                        var empRate = 0.031;
+
+                        var item3 = $("#item3").text(); 
+
+                        $('.tab-empRate button').click(function(){
+                            $(this).addClass('active').siblings().removeClass('active');
+                            $('#empRate').html($(this).attr('data-text'))
+                            console.log($(this).val());
+                            empRate = $(this).attr('data-value');
+                        })
+                        
+                        function item5(){                
+                            var item1 = $("#item1").val(); // 111,111,111                
+                            item1 = parseInt(item1.replace(/,/g, "")); //11111111  
+                            
+                            checkCount(); // 체크박스 도급거래여부 
+                                                    
+                            var item2 = $("#item2").text();
+                            item2 = parseInt(item2.replace(/,/g, ""));
+
+                            var toItem5 = item1 / item2;                
+                            toItem5 = (Math.floor(toItem5 * 10000) / 10000).toFixed(4);    
+                            if(isNaN(toItem5) == true || toItem5 == Infinity){
+                                toItem5 = 0;
+                            }            
+                            $("#item5").text(toItem5);
+                            
+                            return toItem5;                     
+                        };
+                        // 체크박스 도급거래여부
+                        function checkCount(){
+                            var applyMonthCnt = $("input:checkbox[name='applyMonth']:checked").length;                      
+                            var ob = month_avg * applyMonthCnt;         
+                            $("#item2").text(Math.round(ob).toLocaleString());
+                            // console.log(applyMonthCnt);
+                        }; 
+                                        
+                            
+                                                    
+                        $("input").on('keyup change', function () {
+                            
+                            toItem5 = item5(); //수급비율 계산
+
+                            var charge_total =0;
+                            var charge_total_b = 0;
+                            
+                            // 의무고용율(고정값)
+                            // emprate = $("input[name=empRate]:checked").val();
+                            // if($("#empRate1").is(':checked') == true ) {
+                            //     $("#empRate_1").show();
+                            //     $("#empRate_2,#empRate_3").hide();                
+                            // }else if($("#empRate2").is(':checked') == true ) {
+                            //     $("#empRate_2").show();
+                            //     $("#empRate_1,#empRate_3").hide();                
+                            // }else if($("#empRate3").is(':checked') == true ) {
+                            //     $("#empRate_3").show();
+                            //     $("#empRate_2,#empRate_1").hide();                
+                            // }
+
+                            $('.cal_tr td').each(function (idx) { 
+                            console.log(empRate);
+
+                                var c_i_1 = parseFloat($('#c_'+idx+'_1').val()) || 0;                      
+                                c_i_1 = Math.floor(c_i_1 * empRate);
+
+                                $('#c_'+idx+'_2').text(c_i_1);  //의무고용인원
+                                
+                                var c_i_2 = parseFloat($('#c_'+idx+'_2').text());                
+                                var c_i_3 = parseFloat($('#c_'+idx+'_3').val());
+                                var c_i_4 = parseFloat($('#c_'+idx+'_4').val());
+                                var c_i_5 = parseFloat($('#c_'+idx+'_5').val());
+                                
+                                var c_i_6 = c_i_3 + (c_i_4 *2) + c_i_5;
+                                if(isNaN(c_i_6)) c_i_6 = 0;
+                                $('#c_'+idx+'_6').text(c_i_6);  //장애인근로자수 적용인원 
+                                
+                                
+                                var c_i_7 = 0;
+                                var c_i_8 = c_i_2-c_i_6;
+
+                                if(c_i_8 < 0) {
+                                    c_i_8 = 0;
+                                }
+                                    
+                                var ratio = parseFloat(c_i_8 / c_i_2).toFixed(2) ;
+                                var ratioApply = 0;
+                                
+                                
+                                $('#c_'+idx+'_9').text(0);
+                                $('#c_'+idx+'_10').text(0);
+                                $('#c_'+idx+'_11').text(0);
+                                $('#c_'+idx+'_12').text(0);
+                                
+                                if(c_i_6 <= 0) {
+                                    $('#c_'+idx+'_7').text(c_i_8);  //미고용월인원
+                                    ratioApply = 2010580;
+                                    $('#c_'+idx+'_8').text(c_i_6);                              
+                                                        
+                                }else{                    
+                                    $('#c_'+idx+'_7').text(c_i_7);  //미고용월인원 : 0
+                                    $('#c_'+idx+'_8').text(c_i_8);                    
+                                    if(ratio > 0.75){
+                                        $('#c_'+idx+'_9').text(c_i_8);
+                                        ratioApply = 1689800;
+                                                            
+                                    }else if(0.5 < ratio && ratio <= 0.75){
+                                        $('#c_'+idx+'_10').text(c_i_8);
+                                        ratioApply = 1448400;
+                                    }else if(0.25 < ratio && ratio <= 0.5){
+                                        $('#c_'+idx+'_11').text(c_i_8);
+                                        ratioApply = 1279420;
+                                    }else{
+                                        $('#c_'+idx+'_12').text(c_i_8);
+                                        ratioApply = 1207000;
+                                    }                   
+                                }
+                                console.log("r : "+ratioApply);   
+                                
+                                                
+                                var c_i_13 = c_i_8 * ratioApply;
+                                $('#c_'+idx+'_13').text(c_i_13.toLocaleString()); // 예상부담금 발생액
+                                
+                                var c_i_14 = 0;
+                                if(c_i_2 > 0) {
+                                    c_i_14 = ratioApply * toItem5 * item3;
+                                }       
+                                
+                                            
+                                c_i_14 = Math.floor(c_i_14 / 10) * 10;
+                                c_i_14 = Number(c_i_14);
+                                $('#c_'+idx+'_14').text(c_i_14.toLocaleString()); // 월감면액
+                            
+                                charge = $('#c_'+idx+'_13').text().replace(/,/g, ""); 
+                                charge_b = $('#c_'+idx+'_14').text().replace(/,/g, "");       
+                                charge_total += Number(charge);
+                                charge_total_b += Number(charge_b);
+                                
+                                                
+                            });
+                            
+
+
+
+
+                            
+                            var max1 = 0;
+                            max1 = item1 * 0.5;
+                            var max2 = 0;
+                            max2 = charge_total * 0.6;
+                            
+                            if(charge_total_b > max2) charge_total_b = Math.round(max2);
+                            if(charge_total_b > max1) charge_total_b = Math.round(max1);
+                            
+                            
+                            $('#charge_total, #item4result').text(charge_total.toLocaleString()); // 예상부담금 발생액 합계
+                            $('#charge_total_b, #result_cal').text(charge_total_b.toLocaleString()); // 감면금액 합계
+
+                        });
+                    })
+                </script>
 
                 <section>
                     <h3>예상부담금 발생액 작성표</h3>
                     <p>본 작성표를 입력하시면 상단 양식에서 [예상부담금 발생액] 과 [최종 고용부담금 감면금액]이 자동 완성됩니다.</p>
                     <mark class="point02">* 필수입력사항 : [도급거래여부], [상시근로자수], [장애인근로자수]</mark>
-                    <div>
-                        <button class="active">민간 사업주</button>
-                        <button>공공기관/지방공기업</button>
-                        <button>국가/자치단체 (공무원 아닌 근로자)</button>
+                    <div class="tab-empRate">
+                        <button data-text="민간기업의 장애인 의무 고용율은 3.1%" data-value='0.031' class="active">민간 사업주</button>
+                        <button data-text="공공기관의 장애인 의무 고용율은 3.6%" data-value='0.036'>공공기관/지방공기업</button>
+                        <button data-text="국가 및 지자체의 장애인 의무 고용율은 3.6%" data-value='0.036'>국가/자치단체 (공무원 아닌 근로자)</button>
                     </div>
-                    <strong>민간기업의 장애인 의무 고용율은 3.1%</strong>
+                    <strong id="empRate">민간기업의 장애인 의무 고용율은 3.1%</strong>
                     <span>(2023년 기준)</span>
                     <div class="tableArea">
                         <table border="1">
@@ -183,7 +376,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td>1월</td>
                                     <td><input type="checkbox"><label for=""></label></td>
                                     <td><input type="text"></td>
@@ -200,216 +393,18 @@
                                     <td>0</td>
                                     <td>0</td>
                                     <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>2월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>3월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>4월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>5월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>6월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>7월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>8월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>9월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>10월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>11월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>12월</td>
-                                    <td><input type="checkbox"><label for=""></label></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td><input type="text"></td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
                     <div class="tableBottom">
                         <p>
                             예상부담금 발생액 합계 :
-                            <span>0</span>
+                            <span id="charge_total">0</span>
                         </p>
                         <p>
                             감면금액 합계 :
-                            <span>0</span>
+                            <span id="charge_total_b">0</span>
                         </p>
                     </div>
                 </section>
