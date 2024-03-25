@@ -28,8 +28,8 @@ aside a strong{font-weight: 700;}
 
 
 /* 버튼 */
-[class*="btn-"]{width: 264px; font-size: 20px; font-weight: 700; text-align: center;}
-.btn-bg{line-height: 70px; color: white; background-color: var(--color-point01); border: none;}
+[class*="btn-"]{font-weight: 700; text-align: center;}
+.btn-bg{color: white; background-color: var(--color-point01); border: none;}
 .btn-border{line-height: 68px; color: var(--color-point01); border: 1px solid var(--color-point01); box-sizing: border-box;}
 .btnBox{gap: 30px; margin-top: 100px; display: flex; justify-content: center; align-items: center;}
 .btnBox [class*="btn-"], input[type="submit"]{width: 230px;}
@@ -76,30 +76,27 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 
 /* 서버 페이지 공통 */
 [class*="Page"]:not(.mainPage){padding-top: var(--headerHeight);}
-[class*="Page"] > footer{margin-top: 200px;}
-.topBox p:first-of-type{font-size: 50px; line-height: 66px; font-weight: 200;}
+.topBox p:first-of-type{font-weight: 200;}
 .topBox p:first-of-type strong{font-weight: 600;}
 /* 회사소게, 사업안내, 사업안내, 연계고용 공통 */
 :is(.aboutAsPage, .businessPage, .businessPage, [class*="employ"][class*="Page"]) > .contentsBox{text-align: center;}
-:is(.aboutAsPage, .businessPage, .businessPage, [class*="employ"][class*="Page"]) > .contentsBox h2{font-size: 40px; font-weight: 700; color: var(--color-point01);}
+:is(.aboutAsPage, .businessPage, .businessPage, [class*="employ"][class*="Page"]) > .contentsBox h2{font-weight: 700; color: var(--color-point01);}
 /* 회사소게, 사업안내 공통 */
-:is(.aboutAsPage, .businessPage) section h2 + p{font-size: 24px; line-height: 34px; margin-top: 30px; font-weight: 200;}
+:is(.aboutAsPage, .businessPage) section h2 + p{font-weight: 200;}
 :is(.aboutAsPage, .businessPage) section h2 + p b{font-weight: 500;}
 /* 사업안내, 연계고용 공통 */
-:is(.businessPage, [class*="employ"][class*="Page"]) .topBox{padding-block: 40px; display: flex; align-items: center; background-color: #F8FAFF;}
-:is(.businessPage, [class*="employ"][class*="Page"]) .topBox::before{content: ''; width: 340px; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
+:is(.businessPage, [class*="employ"][class*="Page"]) .topBox{padding-block: 40px; background-color: #F8FAFF;}
+:is(.businessPage, [class*="employ"][class*="Page"]) .topBox::after{content: ''; width: 340px; aspect-ratio: 1; background-repeat: no-repeat; background-position: center; background-size: cover;}
 /* 연계고용, 문의하기 공통 */
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
 .employPolicyPage section p,
-.employCalculatorPage section section h3 + p{font-size: 18px; line-height: 24px; font-weight: 300;}
+.employCalculatorPage section section h3 + p{font-weight: 300;}
 :is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p{margin-top: 30px;}
 /* 회사소개, 상세 공통 */
 :is(.aboutAsPage, .detailPage) .contentsBox{padding-top: 120px;}
 /* 소식, 문의 공통 */
 :is(.newsPage, .inquiryPage) .contentsBox{padding-top: 100px;}
 :is(.newsPage, .inquiryPage) .contentsBox section h2{font-size: 50px; font-weight: 700;}
-/* 회사소게 공통 */
-.aboutAsPage section:not(:last-of-type){margin-bottom: 200px;}
 
 
 /* 해더 */

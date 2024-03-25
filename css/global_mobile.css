@@ -1,3 +1,5 @@
+br.pc{display: none;}
+
 /* 언더라인 */
 .underLine{text-decoration-thickness: 10px;}
 
@@ -6,6 +8,30 @@
 aside{position: fixed; bottom: 0; right: 0; width: 100%; height: 60px; justify-content: center; align-items: center; background-color: #FF6760;}
 aside a{font-size: 14px; line-height: 17px; flex: 1;}
 aside a:not(:last-of-type){border-right: 1px solid rgba(255, 255, 255, 0.3);}
+
+
+/* 버튼 */
+[class*="btn-"]{width: 320px; font-size: 16px;}
+.btn-bg{line-height: 60px;}
+
+
+/* 서버 페이지 공통 */
+[class*="Page"] > footer{margin-top: 100px;}
+.topBox p:first-of-type{font-size: 28px; line-height: 36px;}
+/* 회사소게, 사업안내, 사업안내, 연계고용 공통 */
+:is(.aboutAsPage, .businessPage, .businessPage, [class*="employ"][class*="Page"]) > .contentsBox h2{font-size: 26px; line-height: 33px;}
+/* 회사소게, 사업안내 공통 */
+:is(.aboutAsPage, .businessPage) section h2 + p{font-size: 18px; line-height: 26px; margin-top: 20px;}
+/* 사업안내, 연계고용 공통 */
+:is(.businessPage, [class*="employ"][class*="Page"]) .topBox{text-align: center;}
+:is(.businessPage, [class*="employ"][class*="Page"]) .topBox::after{display: block; width: 200px; margin-top: 20px; margin-inline: auto;}
+/* 연계고용, 문의하기 공통 */
+:is([class*="employ"][class*="Page"], .inquiryPage) section h2 + p,
+.employPolicyPage section p,
+.employCalculatorPage section section h3 + p{font-size: 15px; line-height: 22px;}
+/* 회사소게 공통 */
+.aboutAsPage section:not(:last-of-type){margin-bottom: 100px;}
+
 
 
 /* 해더 */

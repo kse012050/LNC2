@@ -11,3 +11,107 @@
 .mainPage .fullBox .newsArea ul li time{font-size: 14px;}
 .mainPage .fullBox .newsArea > a{font-size: 14px; width: 164px; line-height: 50px; margin-top: 40px;}
 .mainPage .paginationBox{display: none;}
+
+
+/* 회사소개 */
+.aboutAsPage .contentsBox .topBox{margin-bottom: 100px;}
+.aboutAsPage .contentsBox .topBox::after{width: 224px; margin-top: 30px;}
+.aboutAsPage .contentsBox .topBox p:first-of-type{margin-bottom: 40px;}
+.aboutAsPage .contentsBox .topBox p:first-of-type strong{display: block;}
+.aboutAsPage .contentsBox .topBox img{width: 190px; margin-bottom: 15px;}
+.aboutAsPage .contentsBox .topBox p:nth-of-type(2){font-size: 14px; line-height: 20px;}
+.aboutAsPage .contentsBox .historyArea h2{margin-bottom: 50px;}
+.aboutAsPage .contentsBox .historyArea ol{background: url(../images/aboutAs-historyBg.png) no-repeat center / 60px;}
+.aboutAsPage .contentsBox .historyArea ol li{position: relative;}
+.aboutAsPage .contentsBox .historyArea ol li span{display: inline-flex; font-size: 20px; line-height: 90px; padding-bottom: 10px;}
+.aboutAsPage .contentsBox .historyArea ol li div{position: absolute; top: 0; width: calc((100% - 84px) / 2); margin-top: 7px; padding-top: 22px; border-top: 1px dotted var(--color-font03);}
+.aboutAsPage .contentsBox .historyArea ol li div::after{width: 13px; top: 0;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n + 1) div{left: 0; text-align: left;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n + 1) div::after{right: 0; transform: translateX(50%) translateY(-50%) rotate(90deg);}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n) div{right: 0; text-align: right;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(2n) div::after{left: 0; transform: translateX(-50%) translateY(-50%) rotate(-90deg);}
+.aboutAsPage .contentsBox .historyArea ol li div p{font-size: 14px; line-height: 17px;}
+.aboutAsPage .contentsBox .historyArea ol li div p:not(:last-of-type){margin-bottom: 15px;}
+.aboutAsPage .contentsBox .certificationArea p{margin-bottom: 60px;}
+.aboutAsPage .contentsBox .certificationArea ul li:first-child{width: 50%; margin-inline: calc((100% - 50%) / 2); margin-bottom: 6.25%;}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){width: 31.25%;}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 3.125%;}
+.aboutAsPage .contentsBox .certificationArea > a{font-size: 15px; width: 272px; line-height: 50px; margin-top: 60px;}
+.aboutAsPage .contentsBox .contactArea > p{margin-bottom: 60px;}
+.aboutAsPage .contentsBox .contactArea ul{margin-bottom: 60px;}
+.aboutAsPage .contentsBox .contactArea ul li{line-height: 22px;}
+.aboutAsPage .contentsBox .contactArea ul li:not(:last-child){margin-bottom: 30px;}
+.aboutAsPage .contentsBox .contactArea ul li b{font-size: 14px;}
+.aboutAsPage .contentsBox .contactArea ul li p{font-size: 15px;}
+.aboutAsPage .contentsBox .contactArea iframe{aspect-ratio: 320 / 240;}
+
+
+/* 산업안내 */
+.businessPage .topBox{margin-bottom: 80px;}
+.businessPage .contentsBox .processArea{margin-bottom: 100px;}
+.businessPage .contentsBox .processArea ol{margin-top: 70px; width: 180px; margin-inline: auto;}
+.businessPage .contentsBox .processArea ol li::before{padding: 9px 16px; font-size: 15px;}
+.businessPage .contentsBox .processArea ol li:not(:last-child){margin-bottom: 70px;}
+.businessPage .contentsBox .processArea ol li b{font-size: 16px; margin-bottom: 5px;}
+.businessPage .contentsBox .processArea ol li p{font-size: 14px; line-height: 18px;}
+.businessPage .contentsBox .partnersArea ul{max-width: 320px; margin: 50px auto 100px;}
+.businessPage .contentsBox .partnersArea ul li{font-size: 15px; line-height: 20px;}
+.businessPage .contentsBox .partnersArea ul li:not(:last-child){margin-bottom: 50px;}
+
+
+/* 연계고용 */
+[class*="employ"][class*="Page"] .tabArea{margin-bottom: 80px;}
+[class*="employ"][class*="Page"] .tabArea li a{font-size: 14px; line-height: 17px; padding: 13px 20px;}
+[class*="employ"][class*="Page"] .contentsBox section section{margin-top: 60px;}
+[class*="employ"][class*="Page"] .contentsBox section section h3{font-size: 20px;}
+[class*="employ"][class*="Page"] .contentsBox section > a{margin-top: 100px;}
+
+/* 연계고용 - 감면제도란? */
+.employPolicyPage .contentsBox section > small{font-size: 14px; line-height: 20px;}
+.employPolicyPage .contentsBox section section h3 + p{margin-bottom: 30px;}
+.employPolicyPage .contentsBox section section div ul li{border-width: 4px;}
+.employPolicyPage .contentsBox section .standardArea div{padding-block: 40px;}
+.employPolicyPage .contentsBox section .standardArea div ul{width: 220px; margin: 30px auto;}
+.employPolicyPage .contentsBox section .standardArea div ul li{font-size: 14px; line-height: 20px;}
+.employPolicyPage .contentsBox section .detailArea div{padding-block: 50px; margin-bottom: 30px;}
+.employPolicyPage .contentsBox section .detailArea div ul{width: 150px; margin-inline: auto;}
+.employPolicyPage .contentsBox section .detailArea div ul li{font-size: 15px; line-height: 22px;}
+.employPolicyPage .contentsBox section .detailArea div ul li:not(:last-child){margin-bottom: 50px;}
+.employPolicyPage .contentsBox section .detailArea div ul li:first-child::after{width: 20px; left: 50%; bottom: -25px; transform: translateX(-50%) translateY(50%);}
+.employPolicyPage .contentsBox section .detailArea div ul li:not(:first-child, :last-child)::after{width: 16px; left: 50%; bottom: -29px; transform: translateX(-50%) translateY(50%);}
+.employPolicyPage .contentsBox section .detailArea div dl{padding-left: 100px; font-size: 14px; margin-top: 50px;}
+.employPolicyPage .contentsBox section .detailArea div dl dt::after{width: 12px; margin-left: 10px;}
+.employPolicyPage .contentsBox section .detailArea div dl dd{padding-inline: 5px;}
+
+/* 연계고용 - 감면 절차 */
+:is(.employProcedurePage, .employCalculatorPage) .contentsBox > section > p{margin-bottom: 60px;}
+.employProcedurePage .contentsBox section ol{font-size: 14px;}
+.employProcedurePage .contentsBox section ol > li{line-height: 20px;}
+.employProcedurePage .contentsBox section ol > li::before{font-size: 16px; width: 30px;}
+.employProcedurePage .contentsBox section ol > li strong{font-size: 20px; line-height: 30px; display: block; margin-bottom: 20px; padding-left: 40px;}
+.employProcedurePage .contentsBox section ol > li div{padding-inline: 20px;}
+.employProcedurePage .contentsBox section ol > li div:not(:last-of-type){margin-bottom: 10px;}
+.employProcedurePage .contentsBox section ol > li div:first-of-type p:not(:last-of-type){margin-bottom: 15px;}
+.employProcedurePage .contentsBox section ol > li div:nth-of-type(2) b{margin-top: 15px;}
+
+/* 연계고용 - 계산기 */
+.employCalculatorPage .contentsBox > section > ul li > *{font-size: 15px; padding-inline: 20px;}
+.employCalculatorPage .contentsBox > section > ul li > p{height: 50px;}
+.employCalculatorPage .contentsBox > section > ul li p{border-width: 1px 0;}
+.employCalculatorPage .contentsBox > section > ul li div{padding-block: 16px;}
+.employCalculatorPage .contentsBox > section > ul li:has(input) div::after{right: 36px;}
+.employCalculatorPage .contentsBox > section > div{padding: 30px 20px;}
+.employCalculatorPage .contentsBox > section > div strong{font-size: 18px; line-height: 30px; margin-bottom: 30px;}
+.employCalculatorPage .contentsBox > section > div strong mark{display: block; font-size: 24px;}
+.employCalculatorPage .contentsBox > section > div strong mark::after{font-size: 18px;}
+.employCalculatorPage .contentsBox > section > div small{font-size: 13px; line-height: 18px;}
+.employCalculatorPage .contentsBox > section > div small:not(:last-of-type){margin-bottom: 10px;}
+.employCalculatorPage .contentsBox section section h3{margin-bottom: 20px;}
+.employCalculatorPage .contentsBox section section > mark{font-size: 14px; margin-block: 15px 50px;}
+.employCalculatorPage .contentsBox section section > div button{font-size: 15px; height: 44px; padding-inline: 20px;}
+.employCalculatorPage .contentsBox section section > :is(strong, span){font-size: 18px; line-height: 26px;}
+.employCalculatorPage .contentsBox section section > span{display: block;}
+.employCalculatorPage .contentsBox section section .tableBottom p{font-size: 16px;}
+.employCalculatorPage .contentsBox section section .tableBottom p:not(:last-of-type){position: relative; padding-bottom: 20px; margin-bottom: 20px;}
+.employCalculatorPage .contentsBox section section .tableBottom p:not(:last-of-type)::after{content: ''; position: absolute; left: 50%; bottom: 0; width: 50px; height: 2px; transform: translateX(-50%) translateY(-50%); background-color: black;}
+.employCalculatorPage .contentsBox section section .tableBottom p span{display: block; font-size: 18px; margin-top: 10px;}
