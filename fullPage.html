@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        body{margin: 0;}
+        .wrap{--moveValue: 0px; position: fixed; left: 0; top: 0; width: 100%; transition: 0.4s transform linear; transform: translateY(var(--moveValue));}
+        .wrap div:not(:last-child){height: var(--fullHeight);}
+        .wrap div:nth-child(1){background-color: lightblue;}
+        .wrap div:nth-child(2){background-color: lightcoral;}
+        .wrap div:nth-child(3){background-color: lightgray;}
+        .wrap div:nth-child(4){background-color: lightseagreen; height: 50vh; transform: translate();}
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('body').css('--fullHeight', window.innerHeight + 'px');
+            // $('.wrap div').get().forEach(function(data){
+            //     console.log(data.getboundingclientrect());
+            // })
+
+            document.addEventListener('touchmove', function(event) {
+                event.preventDefault();
+            }, { passive: false });
+            const fullElement = []
+            const fullElementHeight = []
+            let fullElementTop = []
+            const touchEvent = {
+                startX: 0,
+                startY: 0,
+                endX: 0,
+                endY: 0,
+            }
+            $('.wrap div').each(function(){
+                fullElement.push($(this))
+                fullElementHeight.push($(this).height())
+                fullElementTop.push(fullElementHeight.reduce((prev, current)=> prev + current))
+            })
+            fullElementTop = fullElementTop.map((value) => value - window.innerHeight)
+            console.log(fullElementTop);
+            $('.wrap div').first().append(fullElementTop[0])
+            $('.wrap div').first().append('<br>')
+            $('.wrap div').first().append(fullElementTop[1])
+            $('.wrap div').first().append('<br>')
+            $('.wrap div').first().append(fullElementTop[2])
+            $('.wrap div').first().append('<br>')
+            $('.wrap div').first().append(fullElementTop[3])
+
+            let moveValue;
+            $('.wrap').on('mousewheel', function(e){
+                const delta = e.originalEvent.wheelDelta;
+                fullAnimate(delta)
+            })
+
+            $('.wrap').on('touchstart', function(e){
+                touchEvent['startX'] = e.touches[0].clientX
+                touchEvent['startY'] = e.touches[0].clientY
+            })
+            $('.wrap').on('touchend', function(e){
+                touchEvent['endX'] = e.changedTouches[0].clientX
+                touchEvent['endY'] = e.changedTouches[0].clientY
+                if(Math.abs(touchEvent['startX'] - touchEvent['endX']) - Math.abs(touchEvent['startY'] - touchEvent['endY']) < 0){
+                    fullAnimate(touchEvent['endY'] - touchEvent['startY'])
+                }
+            })
+
+            function fullAnimate(delta){
+                const curruntTop = Math.abs($('.wrap').css("transform").split(',')[5].split(')')[0])
+                if(delta < 0){
+                    moveValue = fullElementTop.find((value)=>value > curruntTop) ?? moveValue
+                }else{
+                    moveValue = fullElementTop.reverse().find((value)=>value < curruntTop) ?? moveValue
+                    fullElementTop.reverse();
+                }
+                const selectElement = fullElement[fullElementTop.indexOf(moveValue)];
+                $('.wrap').css('--moveValue', `-${moveValue}px`)
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

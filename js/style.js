@@ -14,6 +14,10 @@ $(document).ready(function(){
     $('header nav button').click(function(){
         $('header nav').removeClass('active')
     })
+
+    $('.fullBox').length && fullPage()
+
+    
 })
 
 // 기본 - 화면의 가로, 세로 크기 / 스크롤 존재가 있다면 스크롤 크기 없으면 0
@@ -37,5 +41,99 @@ function styleIdx(){
         childrenSelect.each(function(i){
             $(this).css('--styleIdx', i)
         })
+    })
+}
+
+
+// 풀 페이지
+function fullPage(){
+    let fullElement = []
+    let fullElementHeight = []
+    let fullElementTop = []
+    const touchEvent = {
+        startX: 0,
+        startY: 0,
+        endX: 0,
+        endY: 0,
+    }
+
+    currentValue()
+
+    let moveValue;
+    let selectElement;
+    let selectIdx = 0;
+
+    $(window).resize(function(){
+        currentValue()
+        $('.fullBox').css('--moveValue', `${fullElementTop[selectIdx] * -1}px`)
+    })
+
+    function currentValue(){
+        fullElement = []
+        fullElementHeight = []
+        fullElementTop = []
+        $('.fullBox > *').each(function(){
+            fullElement.push($(this))
+            fullElementHeight.push($(this).outerHeight())
+            fullElementTop.push(fullElementHeight.reduce((prev, current)=> prev + current))
+        })
+        fullElementTop = fullElementTop.map((value) => value - window.innerHeight)
+    }
+
+
+
+    // $('.mainPage').css('--duration', `${0.8}s`)
+
+    $('.fullBox').on('mousewheel', function(e){
+        const delta = e.originalEvent.wheelDelta;
+        fullAnimate(delta)
+    })
+
+    $('.fullBox').on('touchstart', function(e){
+        touchEvent['startX'] = e.touches[0].clientX
+        touchEvent['startY'] = e.touches[0].clientY
+    })
+    $('.fullBox').on('touchend', function(e){
+        touchEvent['endX'] = e.changedTouches[0].clientX
+        touchEvent['endY'] = e.changedTouches[0].clientY
+        if(Math.abs(touchEvent['startX'] - touchEvent['endX']) - Math.abs(touchEvent['startY'] - touchEvent['endY']) < 0){
+            fullAnimate(touchEvent['endY'] - touchEvent['startY'])
+        }
+    })
+
+    function fullAnimate(delta){
+        const curruntTop = Math.abs($('.fullBox').css("transform").split(',')[5].split(')')[0])
+        if(delta < 0){
+            moveValue = fullElementTop.find((value)=>value > curruntTop) ?? moveValue
+        }else{
+            moveValue = fullElementTop.reverse().find((value)=>value < curruntTop) ?? moveValue
+            fullElementTop.reverse();
+        }
+        selectIdx = fullElementTop.indexOf(moveValue);
+        selectElement = fullElement[selectIdx];
+        if(selectElement){
+            if(selectElement.attr('data-full') !== undefined){
+                if(selectElement.attr('data-full')){
+                    $('.mainPage').addClass('white');
+                }else{
+                    $('.mainPage').removeClass('white');
+                }
+                $('.mainPage').css('--sideValue', `0`)
+                $('.full-numb').html(`0${selectIdx + 1}`)
+            }else{
+                $('.mainPage').css('--sideValue', `-${selectElement.outerHeight()}px`)
+            }
+            $('.mainPage').css('--duration', `${0.8 / window.innerHeight * selectElement.outerHeight()}s`)
+            $('.fullBox').css('--moveValue', `${moveValue * -1}px`)
+        }
+    }
+
+
+    $('.full-pagination button').click(function(){
+        let delta = 120;
+        if($(this).index()){
+            delta *= -1
+        }
+        fullAnimate(delta)
     })
 }

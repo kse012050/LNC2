@@ -10,12 +10,22 @@
 .mainPage .fullBox .newsArea ul li b{font-size: 24px; margin-bottom: 15px;}
 .mainPage .fullBox .newsArea ul li time{font-size: 18px;}
 .mainPage .fullBox .newsArea > a{font-size: 18px; width: 203px; line-height: 60px; margin-top: 100px;}
-.mainPage .paginationBox{display: none; position: fixed; left: 50px; top: 0; height: 100%; /* display: flex; */ flex-direction: column;}
-.mainPage .paginationBox button{width: 50px; aspect-ratio: 1;}
-.mainPage .paginationBox button:nth-of-type(1){margin-bottom: 33px;}
-.mainPage .paginationBox button:nth-of-type(2){margin-top: 33px;}
-.mainPage .paginationBox span{font-size: 24px;}
-.mainPage .paginationBox span:nth-of-type(1){padding-bottom: 12px; margin-bottom: 12px; font-weight: 700; border-bottom: 1px solid black;}
+.mainPage .full-pagination{position: fixed; left: 50px; top: 0; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.mainPage .full-pagination button{--styleXIdx: 0; width: 50px; aspect-ratio: 1; background: url(../images/full-pagination.png) no-repeat left calc(100% * var(--styleXIdx)) top calc(100% * var(--styleIdx)) / 200%;}
+.mainPage .full-pagination button:nth-of-type(1){margin-bottom: 33px; --styleIdx: 0;}
+.mainPage .full-pagination button:nth-of-type(2){margin-top: 33px; --styleIdx: 1;}
+.mainPage .full-pagination span{font-size: 24px;}
+.mainPage .full-pagination span:nth-of-type(1){padding-bottom: 12px; margin-bottom: 12px; font-weight: 700; border-width: 0 0 1px 0; border-style: solid; border-color: black;}
+.mainPage.white header nav ul li a{color: white; transition-delay: var(--duration);}
+.mainPage.white header nav ul li:last-child a::before{background-image: url(../images/icon-inquiry-white.png); transition-delay: var(--duration);}
+.mainPage.white .full-pagination button{--styleXIdx: 1; transition-delay: var(--duration);}
+.mainPage.white .full-pagination span{color: white; transition-delay: var(--duration);}
+.mainPage.white .full-pagination span:nth-of-type(1){border-color: white; transition-delay: var(--duration);}
+.mainPage :is(aside, .full-pagination){transition: calc(var(--duration) / 2) transform cubic-bezier(0.36, 0.4, 0.6, 1.35); transform: translateY(var(--sideValue));}
+/* .mainPage.white aside{transition-delay: var(--duration);} */
+@media screen and (width < 1650px) {
+    .mainPage .full-pagination{display: none;}
+}
 
 
 /* 회사소개 */

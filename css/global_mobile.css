@@ -78,10 +78,11 @@ header nav ul li:last-child a::before{width: 25px;}
 header nav .iconBox{background-image: url(../images/icon-close.png); position: absolute; right: 12px; top: 10px; z-index: 10;}
 header .iconBox{width: 38px; aspect-ratio: 1;}
 header > .iconBox{background-image: url(../images/icon-menu.png);}
+.mainPage.white header > .iconBox{background-image: url(../images/icon-menu-white.png); transition-delay: var(--duration);}
 
 
 /* 푸터 */
-footer{padding-block: 50px 106px;}
+footer{padding-block: 50px 106px; height: 290px;}
 footer img{max-width: 168px; margin-bottom: 20px;}
 footer address{font-size: 13px; line-height: 20px; max-width: 290px;}
 footer address dl:nth-child(4)::after{content: '/'; margin-inline: 0.4em;}

@@ -91,12 +91,12 @@ input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
 header{position: fixed; left: 0; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; z-index: 100;}
 header h1 a{aspect-ratio: 94 / 60; display: block; background-image: url(../images/logo.png);}
 header nav ul li a{display: flex; align-items: center; font-weight: 700;}
-header nav ul li:last-child a::before{content: ''; aspect-ratio: 30 / 24; background: url(../images/icon-inquiry.png) no-repeat center / cover; margin-right: 5px;}
+header nav ul li:last-child a::before{content: ''; aspect-ratio: 30 / 24; background-image: url(../images/icon-inquiry.png); background-repeat: no-repeat; background-position: center; background-size: cover; margin-right: 5px;}
 [class*="Page"]:not(.mainPage) header{background-color: white;}
 
 
 /* 푸터 */
-footer{background-color: var(--color-face02); text-align: center;}
+footer{background-color: var(--color-face02); text-align: center; box-sizing: border-box;}
 footer address{font-weight: 300; color: var(--color-font02); display: flex; flex-wrap: wrap; justify-content: center; margin-inline: auto;}
 footer address dl{display: flex; justify-content: center;}
 footer address dl:nth-child(1){width: 100%;}
