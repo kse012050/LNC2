@@ -6,7 +6,10 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
-        body{margin: 0;}
+        body{margin: 0; 
+            /* 위로 올렸을 때 새로 고침 막는다 */
+            overflow: hidden;
+        }
         .wrap{--moveValue: 0px; position: fixed; left: 0; top: 0; width: 100%; transition: 0.4s transform linear; transform: translateY(var(--moveValue));}
         .wrap div:not(:last-child){height: var(--fullHeight);}
         .wrap div:nth-child(1){background-color: lightblue;}

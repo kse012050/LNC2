@@ -8,6 +8,7 @@ $(document).ready(function(){
     // 스타일 인덱스
     styleIdx();
 
+    // 모바일 메뉴
     $('header > button').click(function(){
         $('header nav').addClass('active')
     })
@@ -15,8 +16,11 @@ $(document).ready(function(){
         $('header nav').removeClass('active')
     })
 
+    // 풀페이지
     $('.fullBox').length && fullPage()
-
+    
+    // 공유하기 - 링크 복사 
+    $('#linkCopy').length && linkCopy()
     
 })
 
@@ -47,6 +51,9 @@ function styleIdx(){
 
 // 풀 페이지
 function fullPage(){
+   /*  document.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+    }, { passive: false }); */
     let fullElement = []
     let fullElementHeight = []
     let fullElementTop = []
@@ -126,6 +133,15 @@ function fullPage(){
             $('.mainPage').css('--duration', `${0.8 / window.innerHeight * selectElement.outerHeight()}s`)
             $('.fullBox').css('--moveValue', `${moveValue * -1}px`)
         }
+
+        if(selectIdx){
+            $('body').addClass('reflash')
+        }else{
+            $('body').removeClass('reflash')
+        }
+
+
+        
     }
 
 
@@ -135,5 +151,31 @@ function fullPage(){
             delta *= -1
         }
         fullAnimate(delta)
+    })
+}
+
+
+// 공유하기 - 링크 복사 
+function linkCopy(){
+    $('#linkCopy').click(function(){
+        // 현재 페이지의 URL 가져오기
+        var pageLink = window.location.href;
+
+        // 임시 input 엘리먼트를 생성하여 URL 복사
+        var tempInput = document.createElement("input");
+        tempInput.value = pageLink;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        $('.popup').addClass('active');
+    })
+    
+    $('.popup, .popup div button').click(function(){
+        $('.popup').removeClass('active');
+    })
+
+    $('.popup div').click(function(e){
+        e.stopPropagation();
     })
 }

@@ -1,6 +1,7 @@
 /* 메인 */
+body.reflash:has(.mainPage) {overflow: hidden;}
 .mainPage .fullBox :is(div, section){padding-top: calc(var(--headerHeight) + 30px);}
-.mainPage .fullBox div{background-size: clamp(600px, 100%, 360px); background-position: bottom 60px center;}
+.mainPage .fullBox div{background-size: clamp(360px, 100%, 600px); background-position: bottom 60px center;}
 .mainPage .fullBox div span{font-size: 20px; line-height: 26px; margin-bottom: 50px;}
 .mainPage .fullBox div strong{font-size: 32px; line-height: 38px; max-width: 300px; word-break: keep-all;}
 .mainPage .fullBox div p{display: none;}

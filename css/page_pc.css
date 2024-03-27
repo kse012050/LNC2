@@ -74,10 +74,11 @@
 /* 산업안내 */
 .businessPage .topBox{margin-bottom: 120px;}
 .businessPage .topBox::after{margin-inline: 120px 90px;}
-.businessPage .contentsBox .processArea{margin-bottom: 140px;}
-.businessPage .contentsBox .processArea ol{margin-top: 80px; display: flex; justify-content: space-between;}
-.businessPage .contentsBox .processArea ol li{width: 16.667%;}
+.businessPage .contentsBox .processArea{margin-bottom: 140px; padding-inline: 110px;}
+.businessPage .contentsBox .processArea ol{margin-top: 80px; display: flex; justify-content: space-between; position: relative;}
+.businessPage .contentsBox .processArea ol li{width: 20.4082%;}
 .businessPage .contentsBox .processArea ol li::before{padding: 10px 20px; font-size: 17px;}
+.businessPage .contentsBox .processArea ol li:not(:last-child):after{content: ''; position: absolute; right: -25%; top: 80px; width: 20%; aspect-ratio: 1; background: url(../images/icon-arrow-next.png) no-repeat center / cover;}
 .businessPage .contentsBox .processArea ol li b{font-size: 18px; margin-bottom: 15px;}
 .businessPage .contentsBox .processArea ol li p{font-size: 16px; line-height: 20px; min-height: 40px;}
 .businessPage .contentsBox .partnersArea ul{margin-block: 80px 140px; display: flex; flex-wrap: wrap; justify-content: space-between;}

@@ -36,9 +36,10 @@ aside a strong{font-weight: 700;}
 
 /* 게시판 공통 */
 .boardBox{display: flex;}
-.boardBox li{width: 31.667%;}
-.boardBox li a img{margin-bottom: 20px;}
-.boardBox li a strong{font-weight: 700; display: block;}
+.boardBox li{width: 31.667%; flex-shrink: 0;}
+.boardBox li a{display: block;}
+.boardBox li a img{margin-bottom: 20px; aspect-ratio: 380 / 214; object-fit: cover;}
+.boardBox li a strong{font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .boardBox li a time{font-weight: 400; color: var(--color-font03);}
 
 
@@ -55,6 +56,7 @@ aside a strong{font-weight: 700;}
 .inputBox ul li > label:first-child{margin-bottom: 12px; font-weight: 700; display: flex; align-items: start;}
 .inputBox ul li:has(:required) > label:first-child::after{content: '*'; color: var(--color-point02);}
 .inputBox ul li div :is(input, textarea){width: 100%; border: 1px solid var(--color-line01); box-sizing: border-box;}
+.inputBox ul li div :is(input, textarea):focus{outline: 1px solid #2550B6; box-shadow: 0 0 0 2px #2550B6;}
 .inputBox ul li div :is(input, textarea)::placeholder{color: var(--color-font04);}
 .inputBox + input[type="submit"]{display: block; margin-inline: auto;}
 
@@ -63,6 +65,15 @@ input[type="checkbox"] + label{font-size: 16px; display: flex; align-items: cent
 input[type="checkbox"] + label::before{content: ''; width: 22px; aspect-ratio: 1; --styleIdx: 0; background: url(../images/icon-checkbox.png) no-repeat center top calc(100% * var(--styleIdx)) / cover;}
 input[type="checkbox"] + label b{font-weight: 700;}
 input[type="checkbox"]:checked + label::before{--styleIdx: 1;}
+
+
+/* 팝업 */
+body:has(.popup.active){overflow: hidden;}
+.popup{position: fixed; left: 0; top: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5); z-index: 101;}
+.popup.active{display: flex;}
+.popup > div{width: calc(100% - (var(--spacing) * 2)); max-width: 360px; padding-block: 60px 40px; text-align: center; background-color: white; border: 1px solid #2550B6; box-sizing: border-box;}
+.popup > div p{font-size: 18px; font-weight: 400; margin-bottom: 60px;}
+.popup > div button{width: 152px; line-height: 60px;}
 
 
 /* 서버 페이지 공통 */

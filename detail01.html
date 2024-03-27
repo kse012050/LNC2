@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=0">
     <!-- Iphone 모바일 확대 방지  maximum-scale=1.0, user-scalable=0-->
-    <title>납품하기 - LNC (주)엘앤씨 에프앤비</title> 
+    <title>LNC소식 - LNC (주)엘앤씨 에프앤비</title> 
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/og.png" />
     <!-- 썸네일 이미지 -->
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/import.css">
 </head>
 <body>
-    <div class="inquiryPage">
+    <div class="detailPage">
         <header class="mainContentSize">
             <h1><a href="index.html" class="imgBox">LNC (주)엘앤씨 에프앤비</a></h1>
             <button class="iconBox">메뉴 열기</button>
@@ -31,7 +31,7 @@
                     <li><a href="aboutUs.html">회사소개</a></li>
                     <li><a href="business.html">사업안내</a></li>
                     <li><a href="employ-policy.html">연계고용</a></li>
-                    <li><a href="news.html">LNC소식</a></li>
+                    <li class="active"><a href="news.html">LNC소식</a></li>
                     <li><a href="inquiry.html">납품문의</a></li>
                 </ul>
                 <button class="iconBox">메뉴 닫기</button>
@@ -55,60 +55,28 @@
 
         <div class="contentsBox">
             <section>
-                <h2>납품문의</h2>
-                <p>빠른 시일안에 담당자가 확인하여,<br class="mobile"> 메일 or 연락처로 회신드리겠습니다.</p>
-                <form>
-                    <fieldset class="inputBox">
-                        <ul>
-                            <li>
-                                <label for="">업체명</label>
-                                <div>
-                                    <input type="text" required placeholder="업체명을 입력해주세요.">
-                                </div>
-                            </li>
-                            <li>
-                                <label for="">담당자 성함</label>
-                                <div>
-                                    <input type="text" required placeholder="담당자 성함/직책을 입력해주세요.">
-                                </div>
-                            </li>
-                            <li>
-                                <label for="">연락처</label>
-                                <div>
-                                    <input type="text" required placeholder="담당자 연락처를 입력해주세요.">
-                                </div>
-                            </li>
-                            <li>
-                                <label for="">메일 주소</label>
-                                <div>
-                                    <input type="text" required placeholder="회신드릴 메일 주소를 입력해주세요.">
-                                </div>
-                            </li>
-                            <li>
-                                <label for="">예상연간납품액</label>
-                                <div>
-                                    <input type="text" placeholder="예상연간납품액을 입력해주세요.">
-                                </div>
-                            </li>
-                            <li class="full">
-                                <label for="">제목</label>
-                                <div>
-                                    <input type="text" required placeholder="제목을 입력해주세요.">
-                                </div>
-                            </li>
-                            <li class="full">
-                                <label for="">상세 내용</label>
-                                <div>
-                                    <textarea placeholder="문의사항을 작성해주세요." required></textarea>
-                                </div>
-                            </li>
-                        </ul>
-                        <input type="checkbox" id="agree">
-                        <label for="agree"><b>(필수)</b> 개인정보수집 및 이용안내에 동의합니다.</label>
-                    </fieldset>
-                    <input type="submit" value="문의하기" class="btn-bg">
-                </form>
+                <h2>2024년 (주)엘앤씨 에프앤비 신년회 단체사진 촬영</h2>
+                <time>2024.01.01</time>
+                <div class="contentArea">
+                    <img src="images/news/news01-2.jpeg" alt="2024년 (주)엘앤씨 에프앤비 신년회 단체사진 촬영 이미지">
+                    <img src="images/news/news01-1.jpeg" alt="2024년 (주)엘앤씨 에프앤비 신년회 단체사진 촬영 이미지">
+                    <p>2024년 새해를 맞이하여 (주)엘앤씨 에프앤비에서는 임직원 모두가 모여 신년회를 진행하였습니다. 이번 신년회에서는 회사의 비전과 목표를 공유하고, 임직원들 간의 소통과 화합을 다지는 시간을 가졌습니다.</p>
+                    <p>신년회를 마무리하며, 임직원 모두가 함께 단체사진을 촬영하였습니다. 이번 단체사진 촬영은 회사의 역사와 전통을 기록하고, 임직원들의 자부심과 소속감을 높이는 데 큰 역할을 할 것입니다.</p>
+                    <p>사진 속 임직원들은 모두 밝은 표정으로 서로를 바라보며, 회사의 발전과 성장을 위해 노력할 것을 다짐하고 있습니다. 이번 신년회를 계기로 (주)엘앤씨 에프앤비가 더욱 발전하고 성장할 것으로 기대됩니다.</p>
+                </div>
+                <div class="btnBox">
+                    <a href="news.html" class="btn-bg">목록으로</a>
+                    <!-- <a href="" class="btn-border">공유하기</a> -->
+                    <button class="btn-border" id="linkCopy">공유하기</button>
+                </div>
             </section>
+        </div>
+
+        <div class="popup">
+            <div>
+                <p>링크 복사되었습니다.</p>
+                <button class="btn-bg">확인</button>
+            </div>
         </div>
 
         
