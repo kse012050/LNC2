@@ -41,13 +41,14 @@
 .aboutAsPage .contentsBox .historyArea ol li::after{content: ''; position: absolute; right: 2px; width: 10px; height: 62%; background-color: white;}
 .aboutAsPage .contentsBox .historyArea ol li::before{top: -3px; transform: translateX(-105%) rotate(-27deg); transform-origin: top;}
 .aboutAsPage .contentsBox .historyArea ol li::after{bottom: -3px; transform: translateX(-105%) rotate(27deg); transform-origin: bottom;}
-.aboutAsPage .contentsBox .historyArea ol li:not(:nth-last-child(-n + 2)){flex: 140;}
-.aboutAsPage .contentsBox .historyArea ol li:nth-last-child(2){flex: 160;}
-.aboutAsPage .contentsBox .historyArea ol li:last-child{flex: 200;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(1){flex: 100;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(n + 2):nth-child(-n + 6){flex: 110;}
+.aboutAsPage .contentsBox .historyArea ol li:nth-child(n + 7):nth-child(-n + 9){flex: 120;}
+.aboutAsPage .contentsBox .historyArea ol li:last-child{flex: 160;}
 .aboutAsPage .contentsBox .historyArea ol li:last-child::before{box-shadow: 9px 0px 0px 0px white;}
 .aboutAsPage .contentsBox .historyArea ol li:last-child::after{box-shadow: 9px 0px 0px 0px white;}
 .aboutAsPage .contentsBox .historyArea ol li span{font-size: 26px; line-height: 80px;}
-.aboutAsPage .contentsBox .historyArea ol li div{height: 184px; margin-left: 8px; padding-block: 10px; padding-left: 15px; border-left: 1px dotted var(--color-font03); position: absolute; left: 0; text-align: left; box-sizing: border-box;}
+.aboutAsPage .contentsBox .historyArea ol li div{height: 184px; padding-block: 10px; padding-left: 15px; border-left: 1px dotted var(--color-font03); position: absolute; left: 0; text-align: left; box-sizing: border-box;}
 .aboutAsPage .contentsBox .historyArea ol li div::after{left: 0; width: 15px; translate: -50%;}
 .aboutAsPage .contentsBox .historyArea ol li:not(:last-child) div{width: 200%;}
 .aboutAsPage .contentsBox .historyArea ol li:last-child div{width: 100%;}
@@ -58,10 +59,11 @@
 .aboutAsPage .contentsBox .historyArea ol li div p{font-size: 16px; line-height: 19px;}
 .aboutAsPage .contentsBox .historyArea ol li div p:not(:last-of-type){margin-bottom: 20px;}
 .aboutAsPage .contentsBox .certificationArea p{margin-bottom: 80px;}
-.aboutAsPage .contentsBox .certificationArea ul{padding: 20px 5% 40px 43.334%; position: relative;}
+.aboutAsPage .contentsBox .certificationArea ul{padding: 20px 5.417% 46px;}
+/* .aboutAsPage .contentsBox .certificationArea ul{padding: 20px 5% 40px 43.334%; position: relative;}
 .aboutAsPage .contentsBox .certificationArea ul li:first-child{position: absolute; left: 5%; top: 20px; width: 33.3334%;}
 .aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){width: 29.0322%;}
-.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 6.4516%;}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 6.4516%;} */
 .aboutAsPage .contentsBox .certificationArea > a{font-size: 18px; width: 350px; line-height: 60px; margin-top: 80px;}
 .aboutAsPage .contentsBox .contactArea > p{margin-bottom: 80px;}
 .aboutAsPage .contentsBox .contactArea ul{display: flex; margin-bottom: 80px;}

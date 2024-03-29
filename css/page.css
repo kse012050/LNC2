@@ -27,13 +27,16 @@
 .aboutAsPage .contentsBox .topBox{text-align: center;}
 .aboutAsPage .contentsBox .topBox::after{content: ''; aspect-ratio: 380 / 340; background: url(../images/icon-aboutUs.png) no-repeat center / cover; display: inline-block; }
 .aboutAsPage .contentsBox .topBox p:nth-of-type(2){font-weight: 300; color: var(--color-font02);}
+.aboutAsPage .contentsBox .topBox p:nth-of-type(2) b{font-weight: 700;}
 .aboutAsPage .contentsBox .historyArea ol li span{font-weight: 700; color: white;}
 .aboutAsPage .contentsBox .historyArea ol li div::after{content: ''; position: absolute; aspect-ratio: 15 / 10; background: url(../images/icon-polygon.png) no-repeat center / cover;}
 .aboutAsPage .contentsBox .historyArea ol li div p{font-weight: 300;}
+/* .aboutAsPage .contentsBox .certificationArea ul{display: flex; flex-wrap: wrap; justify-content: space-between;} */
 .aboutAsPage .contentsBox .certificationArea ul{display: flex; flex-wrap: wrap; justify-content: space-between;}
-.aboutAsPage .contentsBox .certificationArea ul li{box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.10);}
-.aboutAsPage .contentsBox .certificationArea ul li:first-child{aspect-ratio: 400 / 563; background: url(../images/abuotUs-certificationImg.png) no-repeat center / cover;}
-.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){aspect-ratio: 180 / 260; background-image: url(../images/abuotUs-certification.png); background-position: left top calc(100% / (var(--idxTotal) - 2) * (var(--styleIdx) - 1));}
+.aboutAsPage .contentsBox .certificationArea ul li{width: 17.757%; aspect-ratio: 190 / 264; background: url(../images/img_certification.png) no-repeat center top calc((100% / (var(--idxTotal) - 1)) * var(--styleIdx)) / 100%; text-indent: -9999px; box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.10);}
+.aboutAsPage .contentsBox .certificationArea ul li:nth-child(-n + 5){margin-bottom: 2.429%;}
+/* .aboutAsPage .contentsBox .certificationArea ul li:first-child{aspect-ratio: 400 / 563; background: url(../images/abuotUs-certificationImg.png) no-repeat center / cover;} */
+/* .aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){aspect-ratio: 180 / 260; background-image: url(../images/abuotUs-certification.png); background-position: left top calc(100% / (var(--idxTotal) - 2) * (var(--styleIdx) - 1));} */
 .aboutAsPage .contentsBox .certificationArea > a{display: inline-block; font-weight: 700; text-align: center; border: 1px solid var(--color-line01);}
 .aboutAsPage .contentsBox .contactArea ul li{flex: 1; text-align: center;}
 .aboutAsPage .contentsBox .contactArea ul li::before{content: ''; display: block; width: 40px; margin-bottom: 20px; aspect-ratio: 1; background: url(../images/icon-contact.png) no-repeat center top calc(100% / (var(--idxTotal) - 1) * var(--styleIdx)) / cover; margin-inline: auto;}

@@ -34,9 +34,10 @@ body.reflash:has(.mainPage) {overflow: hidden;}
 .aboutAsPage .contentsBox .historyArea ol li div p{font-size: 14px; line-height: 17px;}
 .aboutAsPage .contentsBox .historyArea ol li div p:not(:last-of-type){margin-bottom: 15px;}
 .aboutAsPage .contentsBox .certificationArea p{margin-bottom: 60px;}
-.aboutAsPage .contentsBox .certificationArea ul li:first-child{width: 50%; margin-inline: calc((100% - 50%) / 2); margin-bottom: 6.25%;}
+.aboutAsPage .contentsBox .certificationArea ul{padding-bottom: 6px 8px;}
+/* .aboutAsPage .contentsBox .certificationArea ul li:first-child{width: 50%; margin-inline: calc((100% - 50%) / 2); margin-bottom: 6.25%;}
 .aboutAsPage .contentsBox .certificationArea ul li:not(:first-child){width: 31.25%;}
-.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 3.125%;}
+.aboutAsPage .contentsBox .certificationArea ul li:not(:first-child):nth-child(-n + 4){margin-bottom: 3.125%;} */
 .aboutAsPage .contentsBox .certificationArea > a{font-size: 15px; width: 272px; line-height: 50px; margin-top: 60px;}
 .aboutAsPage .contentsBox .contactArea > p{margin-bottom: 60px;}
 .aboutAsPage .contentsBox .contactArea ul{margin-bottom: 60px;}
